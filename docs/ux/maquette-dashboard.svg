@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="650" viewBox="0 0 1560 650" role="img" aria-labelledby="title desc">
+  <title id="title">Maquette du tableau de bord DéclaSinistre</title>
+  <desc id="desc">Dashboard avec indicateurs de pilotage et une zone dédiée aux résultats CI, à la couverture et à l’exécution manuelle.</desc>
+  <defs><style>
+    .bg{fill:#f3f7f6}.panel{fill:#fff;stroke:#dce7e4;stroke-width:1.4}.ink{fill:#173442}.muted{fill:#74878b}.teal{fill:#087e78}.green{fill:#e6f4ee}.gold{fill:#fbf5e8}.line{stroke:#e2ebe8;stroke-width:1}.h1{font:700 21px Arial,sans-serif;fill:#173442}.h2{font:700 15px Arial,sans-serif;fill:#173442}.body{font:13px Arial,sans-serif;fill:#405b63}.small{font:11px Arial,sans-serif;fill:#71848a}.kicker{font:700 10px Arial,sans-serif;fill:#087e78;letter-spacing:1px}.metric{font:700 23px Arial,sans-serif;fill:#173442}.button{font:700 12px Arial,sans-serif;fill:#fff}
+  </style></defs>
+  <rect width="1560" height="650" class="bg"/>
+  <text x="42" y="41" class="kicker">DÉCLASINISTRE · PILOTAGE PRODUIT ET ASSURANCE QUALITÉ</text>
+  <text x="42" y="75" class="h1">Suivre le parcours de déclaration</text>
+  <text x="42" y="99" class="small">Avancement, risques, exécution des tests et couverture des huit user stories.</text>
+  <rect x="1290" y="31" width="226" height="30" rx="15" class="gold" stroke="#eadcb9"/>
+  <text x="1310" y="50" class="small">CAS FICTIF · DONNÉES SIMULÉES</text>
+
+  <!-- Tabs -->
+  <rect x="42" y="121" width="180" height="38" rx="9" fill="#e7efed"/>
+  <text x="91" y="145" class="body">Pilotage</text>
+  <rect x="229" y="121" width="240" height="38" rx="9" class="teal"/>
+  <text x="262" y="145" class="button">QA · Tests et couverture</text>
+
+  <!-- CI section -->
+  <text x="42" y="196" class="kicker">ASSURANCE QUALITÉ · RÉFÉRENTIEL DE TEST</text>
+  <text x="42" y="222" class="h2">Exécuter les contrôles automatiques</text>
+  <rect x="42" y="239" width="1476" height="92" rx="13" class="panel"/>
+  <rect x="60" y="256" width="208" height="57" rx="9" class="green"/>
+  <circle cx="82" cy="284" r="8" fill="#16866f"/>
+  <path d="M78 284l3 3 6-7" fill="none" stroke="#fff" stroke-width="2"/>
+  <text x="100" y="279" class="small">DERNIÈRE CI · PLAYWRIGHT</text>
+  <text x="100" y="300" class="h2">Réussie</text>
+  <text x="294" y="276" class="h2">15 tests Playwright réussis</text>
+  <text x="294" y="299" class="small">État lu depuis le dernier workflow GitHub Actions · lien vers rapport, captures et traces.</text>
+  <rect x="1245" y="260" width="249" height="48" rx="8" class="teal"/>
+  <text x="1295" y="289" class="button">Lancer les contrôles qualité</text>
+
+  <!-- coverage section -->
+  <text x="42" y="371" class="h2">Couverture liée aux user stories</text>
+  <rect x="42" y="389" width="1476" height="86" rx="13" class="panel"/>
+  <g transform="translate(62,407)">
+    <text class="small">US COUVERTES PAR CONCEPTION</text><text y="43" class="metric">8 / 8</text>
+  </g>
+  <line x1="335" y1="405" x2="335" y2="459" class="line"/>
+  <g transform="translate(365,407)">
+    <text class="small">TC AVEC SCÉNARIO E2E</text><text y="43" class="metric">14 / 15</text>
+  </g>
+  <line x1="640" y1="405" x2="640" y2="459" class="line"/>
+  <g transform="translate(670,407)">
+    <text class="small">EXÉCUTION MANUELLE</text><text y="43" class="metric">Session courante</text>
+  </g>
+  <line x1="1010" y1="405" x2="1010" y2="459" class="line"/>
+  <g transform="translate(1040,407)">
+    <text class="small">COUVERTURE DU CODE</text><text y="43" class="metric">Non mesurée</text>
+  </g>
+
+  <!-- execution table -->
+  <text x="42" y="516" class="h2">Exécuter et consigner un scénario métier</text>
+  <rect x="42" y="531" width="1476" height="85" rx="12" class="panel"/>
+  <text x="62" y="557" class="small">USER STORY</text><text x="62" y="584" class="body">US-001 · Identification assuré et contrat</text>
+  <text x="449" y="557" class="small">CAS / RÉSULTAT ATTENDU</text><text x="449" y="584" class="body">TC-001 · Contrat fictif valide</text>
+  <text x="865" y="557" class="small">RÉSULTAT MANUEL</text><text x="865" y="584" class="body">À exécuter / Réussi / Échec / Bloqué</text>
+  <rect x="1232" y="550" width="251" height="45" rx="8" fill="#f0f7f4" stroke="#d9e9e4"/>
+  <text x="1272" y="578" class="body">Enregistrer la preuve</text>
+  <text x="42" y="635" class="small">Les résultats manuels sont propres à la session Streamlit. Le rapport CI est consultable depuis son artefact GitHub Actions.</text>
+</svg>

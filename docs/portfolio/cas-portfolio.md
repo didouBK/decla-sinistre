@@ -18,6 +18,8 @@ Le scénario part de l’hypothèse que des déclarations arrivent incomplètes 
 - Processus AS-IS / TO-BE et règles métier de démonstration.
 - 10 exigences, 8 user stories et 12 règles reliées au référentiel.
 - 15 cas de test, matrice de traçabilité et scénarios Gherkin.
+- Cahier UX, maquettes SVG du parcours et du dashboard, guide de démonstration.
+- Architecture, ADR de cadrage, revue des limites sécurité/données et runbook.
 - Prototype responsive statique et tableau de pilotage / QA.
 - Contrôles de cohérence Python, tests pytest et tests navigateur Playwright reliés aux identifiants TC et US.
 

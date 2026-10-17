@@ -32,10 +32,10 @@ Le prototype statique est dans `prototype/`; le dashboard Streamlit dans `dashbo
 - **BA :** expression de besoin, périmètre, règles, processus AS-IS/TO-BE, exigences et traçabilité.
 - **QA :** stratégie, plan, cas, critères Gherkin, données fictives, contrôles automatisés et limites.
 - **Pilotage :** MoSCoW, roadmap, sprints simulés, risques, RACI, COPIL, vélocité/burndown.
-- **UX/technique :** prototype accessible de base, responsive, Streamlit/Pandas/Plotly.
+- **UX/technique :** cahier UX, maquettes SVG modifiables, prototype responsive, architecture et limites sécurité documentées, Streamlit/Pandas/Plotly.
 
 ## Livrables
-Commencer par [l’étude de cas portfolio](docs/portfolio/cas-portfolio.md) et [l’index documentaire](docs/index.md), puis [expression de besoin](docs/ba/expression-besoin.md), [stories](docs/ba/user-stories.md), [règles](docs/ba/regles-gestion.md), [matrice QA](docs/qa/matrice-tracabilite.md), [roadmap](docs/pilotage/roadmap.md), [registre des risques](docs/pilotage/registre-risques.md) et [architecture](docs/architecture/architecture.md).
+Commencer par [l’étude de cas portfolio](docs/portfolio/cas-portfolio.md), le [guide de démonstration](docs/guide-demonstration.md) et [l’index documentaire](docs/index.md), puis [expression de besoin](docs/ba/expression-besoin.md), [stories](docs/ba/user-stories.md), [cahier UX et maquettes](docs/ux/cahier-ux.md), [matrice QA](docs/qa/matrice-tracabilite.md), [architecture](docs/architecture/architecture.md), [sécurité et données](docs/architecture/securite-donnees.md) et [runbook](docs/runbook.md).
 
 ## Installation et exécution
 Python 3.11+ recommandé.
@@ -51,7 +51,7 @@ Prototype: `cd prototype && python3 -m http.server 8000`, puis ouvrir http://loc
 Dashboard depuis la racine: `streamlit run dashboard/app.py`.
 
 ## Tests
-`python3 scripts/validate_project.py` puis `python3 -m pytest -q`. Les fichiers `.feature` sont des spécifications; l’automatisation pytest vérifie les référentiels, liens et exports, pas l’exécution navigateur. Les scénarios UI doivent être joués manuellement et consignés. Les nombres de tests passés ne sont pas inventés.
+`python3 scripts/validate_project.py` puis `python3 -m pytest -q tests/`. Pytest vérifie les référentiels, liens et exports. Les parcours navigateur Playwright sont reliés aux US/TC et exécutés dans la CI GitHub Actions.
 
 Les parcours navigateur automatisés sont exécutés avec Playwright et reliés aux TC/US par leur identifiant dans le nom de chaque test. Pour les lancer localement :
 
@@ -64,7 +64,7 @@ npm run test:e2e
 La CI publie le rapport Playwright comme artefact de chaque exécution. TC-015 reste une mesure manuelle du temps de parcours : le dépôt ne prétend pas avoir mesuré un résultat utilisateur. La couverture QA suivie dans le dashboard est la couverture des scénarios métier par US; aucune couverture de lignes de code n’est revendiquée.
 
 ## Limites et améliorations
-Aucun backend, compte réel, sécurité de production, contrôle antivirus, stockage documentaire, audit de conformité ou validation métier indépendante. Les statuts et données de pilotage sont simulés. Suite possible: tests navigateur automatisés, validation des règles par un référent métier, étude de sécurité/confidentialité, puis architecture authentifiée et journalisée avant tout usage réel.
+Aucun backend, compte réel, sécurité de production, contrôle antivirus, stockage documentaire, audit de conformité, test utilisateur ou validation métier indépendante. Les statuts et données de pilotage sont simulés. Les prochaines validations du cas seraient une mesure manuelle de durée (TC-015), des essais utilisateurs, puis une revue métier, sécurité, confidentialité et accessibilité. Le prototype ne doit pas être utilisé pour déposer de vrais dossiers.
 
 ## Déploiement
 
