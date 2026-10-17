@@ -19,7 +19,6 @@ st.set_page_config(page_title="DéclaSinistre · Pilotage", page_icon="◈", lay
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
     :root { --ink:#193342; --navy:#102c3b; --teal:#087e78; --muted:#687c82; --line:#e3ebe8; }
     .stApp { background:linear-gradient(180deg,#f2f6f5 0,#f7f9f8 340px,#f7f9f8 100%); color:var(--ink); font-family:'DM Sans',sans-serif; }
     .block-container { max-width:1320px; padding-top:2.3rem; padding-bottom:3.5rem; }
