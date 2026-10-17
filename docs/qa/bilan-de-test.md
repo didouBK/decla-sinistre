@@ -1,6 +1,6 @@
 # Bilan de test
 
-> Dernière exécution documentée : 17 octobre 2026 · Commit `43726ee913d26d0d24c6e5ce3b63ebd8706dd587` · Workflow GitHub Actions n° 22.
+> Dernière exécution automatisée des tests : 17 octobre 2026 · Commit `9d413a4994a4214d365026909eb9ee81a165b14d` · Workflow GitHub Actions n° 24.
 
 ## Résultats automatisés
 
@@ -10,7 +10,7 @@
 | pytest | 4 réussis | Contrôles du référentiel et des artefacts Python |
 | Playwright / Chromium | 15 réussis | Parcours navigateur associés aux user stories; 14 identifiants TC distincts sur les 15 définis |
 
-Les deux jobs du dernier [workflow GitHub Actions](https://github.com/didouBK/decla-sinistre/actions/runs/39030239463) sont réussis : `checks` et `browser`. Le rapport Playwright et les traces sont conservés comme artefact pendant 30 jours. Le [dashboard QA](https://decla-sinistre-x9mfsvb3qxpanxxc4gmnhu.streamlit.app/) affiche l’état de la dernière exécution automatisée.
+Les deux jobs du dernier [workflow GitHub Actions](https://github.com/didouBK/decla-sinistre/actions/runs/39031387325) sont réussis : `checks` et `browser`. Le rapport Playwright et les traces sont conservés comme artefact pendant 30 jours. Le [dashboard QA](https://decla-sinistre-x9mfsvb3qxpanxxc4gmnhu.streamlit.app/) affiche l’état de la dernière exécution automatisée.
 
 ## Couverture
 
