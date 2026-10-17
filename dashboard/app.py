@@ -88,7 +88,9 @@ RULES_BY_ID = {item["id"]: item for item in ref["rules"]}
 FEATURE_FILES = {story_id: ROOT / "tests/features" / f"{story_id.lower()}.feature" for story_id in STORIES_BY_ID}
 TEST_STORIES = {test_id: [story_id for story_id, ids in STORY_TESTS.items() if test_id in ids] for test_id in TESTS_BY_ID}
 E2E_FILE = ROOT / "tests/e2e/prototype.spec.js"
-E2E_TEST_IDS = set(re.findall(r"TC-\d{3}", E2E_FILE.read_text(encoding="utf-8"))) if E2E_FILE.exists() else set()
+E2E_SOURCE = E2E_FILE.read_text(encoding="utf-8") if E2E_FILE.exists() else ""
+E2E_TEST_IDS = set(re.findall(r"TC-\d{3}", E2E_SOURCE))
+E2E_TEST_COUNT = len(re.findall(r"^test\(", E2E_SOURCE, flags=re.MULTILINE))
 
 
 @st.cache_data(ttl=120, show_spinner=False)
@@ -244,7 +246,7 @@ with qa_tab:
             ci_time = datetime.fromisoformat(ci_time.replace("Z", "+00:00")).strftime("%d/%m/%Y à %H:%M UTC")
         if ci_run and ci_run["status"] == "completed" and ci_run["conclusion"] == "success":
             ci_columns[0].metric("Dernière CI · Playwright", "Réussie")
-            ci_columns[1].markdown(f"**{len(E2E_TEST_IDS)} scénarios navigateur réussis** · {ci_time}  \n[Consulter le rapport et ses captures]({ci_run['url']})")
+            ci_columns[1].markdown(f"**{E2E_TEST_COUNT} tests Playwright réussis** · {ci_time}  \n[Consulter le rapport et ses captures]({ci_run['url']})")
         elif ci_run and ci_run["status"] == "completed":
             ci_columns[0].metric("Dernière CI · Playwright", "Échec")
             ci_columns[1].markdown(f"Exécution terminée · {ci_time}  \n[Consulter le rapport et les traces]({ci_run['url']})")
