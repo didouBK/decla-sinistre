@@ -8,8 +8,23 @@
 
 > Cas pratique portfolio intégralement fictif. Les chiffres, acteurs, règles, données et résultats de pilotage sont des hypothèses ou simulations. Aucun assureur réel ni donnée client réelle ne sont impliqués. Ce projet n’est pas utilisé en production.
 
+## Aperçu visuel
+
+Le prototype et le dashboard sont consultables en ligne : [parcours de déclaration](https://didoubk.github.io/decla-sinistre/) · [dashboard de pilotage et QA](https://decla-sinistre-x9mfsvb3qxpanxxc4gmnhu.streamlit.app/).
+
+**Parcours de déclaration**
+
+![Capture du prototype de déclaration fictif](docs/images/parcours-declaration.png)
+
+**Dashboard de pilotage**
+
+![Capture du dashboard avec avancement simulé, exigences liées et capacité par sprint](docs/images/dashboard-pilotage.png)
+
+Les captures montrent des données et indicateurs de démonstration fictifs.
+
 ## Sommaire
 - [Contexte et objectifs](#contexte-et-objectifs)
+- [Aperçu visuel](#aperçu-visuel)
 - [Périmètre](#périmètre)
 - [Architecture](#architecture)
 - [Compétences démontrées](#compétences-démontrées)
