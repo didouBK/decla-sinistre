@@ -85,6 +85,8 @@ REQUIREMENTS_BY_ID = {item["id"]: item for item in ref["requirements"]}
 RULES_BY_ID = {item["id"]: item for item in ref["rules"]}
 FEATURE_FILES = {story_id: ROOT / "tests/features" / f"{story_id.lower()}.feature" for story_id in STORIES_BY_ID}
 TEST_STORIES = {test_id: [story_id for story_id, ids in STORY_TESTS.items() if test_id in ids] for test_id in TESTS_BY_ID}
+E2E_FILE = ROOT / "tests/e2e/prototype.spec.js"
+E2E_TEST_IDS = set(re.findall(r"TC-\d{3}", E2E_FILE.read_text(encoding="utf-8"))) if E2E_FILE.exists() else set()
 
 if "qa_results" not in st.session_state:
     st.session_state.qa_results = {}
@@ -201,7 +203,9 @@ with qa_tab:
     st.subheader("Exécuter les contrôles automatiques")
     st.markdown(
         "Les contrôles automatiques vérifient la structure du référentiel et les exports du dépôt. "
-        "Les scénarios métier et navigateur restent à jouer manuellement dans le prototype."
+        "Les tests navigateur Playwright sont lancés par la CI GitHub Actions; "
+        "les scénarios métier non automatisés et la mesure de durée restent à jouer manuellement dans le prototype. "
+        "[Voir le workflow de tests](https://github.com/didouBK/decla-sinistre/actions/workflows/ci.yml)."
     )
     if st.button("Lancer les contrôles qualité", type="primary", key="run_quality"):
         commands = {
@@ -239,13 +243,14 @@ with qa_tab:
 
     st.divider()
     st.subheader("Couverture liée aux user stories")
-    st.caption("La couverture de conception vient des liens TC indiqués dans docs/ba/user-stories.md. TC-014 et TC-015 sont transverses à tout le parcours. Un résultat automatique de structure ne vaut pas exécution fonctionnelle d’une US.")
+    st.caption("Les cas E2E sont déduits des identifiants TC présents dans tests/e2e/prototype.spec.js. La couverture de conception vient des liens déclarés dans docs/ba/user-stories.md. TC-014 et TC-015 sont transverses à tout le parcours; TC-015 reste une mesure manuelle.")
 
     all_results = st.session_state.qa_results
     executed_statuses = {"Réussi", "Échec"}
     story_rows = []
     for story_id, story in STORIES_BY_ID.items():
         test_ids = STORY_TESTS.get(story_id, [])
+        e2e_count = sum(test_id in E2E_TEST_IDS for test_id in test_ids)
         statuses = [all_results.get(test_id, {}).get("status", "À exécuter") for test_id in test_ids]
         executed = sum(status in executed_statuses for status in statuses)
         passed = sum(status == "Réussi" for status in statuses)
@@ -262,6 +267,7 @@ with qa_tab:
             overall = "À exécuter"
         story_rows.append({
             "US": story_id, "User story": story["title"], "TC liés": len(test_ids),
+            "Cas E2E": f"{e2e_count} / {len(test_ids)}",
             "Exécutés": executed, "Réussis": passed, "Échecs": failed,
             "Bloqués": blocked, "Couverture d’exécution": f"{coverage:.0%}", "État": overall,
         })
@@ -272,11 +278,13 @@ with qa_tab:
     passed_count = sum(result.get("status") == "Réussi" for result in all_results.values())
     blocked_count = sum(result.get("status") == "Bloqué" for result in all_results.values())
     cases_total = len(TESTS_BY_ID)
-    qa_metrics = st.columns(4)
+    e2e_covered = len(E2E_TEST_IDS.intersection(TESTS_BY_ID))
+    qa_metrics = st.columns(5)
     qa_metrics[0].metric("US couvertes par conception", f"{design_covered} / {len(STORIES_BY_ID)}")
-    qa_metrics[1].metric("US avec exécution", f"{executed_stories} / {len(STORIES_BY_ID)}")
-    qa_metrics[2].metric("Cas réussis", f"{passed_count} / {cases_total}")
-    qa_metrics[3].metric("Échecs / bloqués", f"{failed_count} / {blocked_count}")
+    qa_metrics[1].metric("TC avec scénario E2E", f"{e2e_covered} / {cases_total}")
+    qa_metrics[2].metric("US avec exécution manuelle", f"{executed_stories} / {len(STORIES_BY_ID)}")
+    qa_metrics[3].metric("Cas réussis manuellement", f"{passed_count} / {cases_total}")
+    qa_metrics[4].metric("Échecs / bloqués", f"{failed_count} / {blocked_count}")
     st.dataframe(pd.DataFrame(story_rows), use_container_width=True, hide_index=True)
 
     st.subheader("Exécuter un scénario métier")
@@ -363,4 +371,4 @@ with qa_tab:
     plan_csv = pd.DataFrame(plan_rows).to_csv(index=False).encode("utf-8-sig")
     st.download_button("Exporter le plan de test et sa couverture CSV", plan_csv, "decla-sinistre-plan-de-test.csv", "text/csv")
 
-    st.markdown('<div class="note-box"><strong>Portée :</strong> les résultats manuels et automatiques sont propres à cette session Streamlit. Aucun stockage durable ni synchronisation entre utilisateurs n’est configuré. Les tests fonctionnels doivent être rejoués et les preuves exportées pour constituer un bilan formel.</div>', unsafe_allow_html=True)
+    st.markdown('<div class="note-box"><strong>Portée :</strong> les résultats saisis et les contrôles lancés depuis ce tableau sont propres à cette session Streamlit. Aucun stockage durable ni synchronisation entre utilisateurs n’est configuré. La couverture affichée porte sur les scénarios par US; la couverture des lignes de code n’est pas mesurée. Les rapports Playwright sont archivés dans les artefacts GitHub Actions.</div>', unsafe_allow_html=True)

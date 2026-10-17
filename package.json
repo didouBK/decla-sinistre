@@ -1,0 +1,13 @@
+{
+  "name": "decla-sinistre-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Tests navigateur du prototype fictif DéclaSinistre",
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0"
+  }
+}

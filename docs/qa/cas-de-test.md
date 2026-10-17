@@ -1,6 +1,6 @@
 # Cas de test
 
-Référentiel exhaustif dans la matrice. Tous à exécuter manuellement sauf contrôles Python indiqués dans le bilan.
+Référentiel exhaustif dans la matrice. TC-001 à TC-014 ont des parcours Playwright reliés aux US/TC; TC-015 est une mesure manuelle. Les résultats réels d’exécution sont consultables dans le rapport GitHub Actions, pas préremplis dans ce document.
 
 ## TC-001 — Contrat valide
 Liens: REQ-001;RG-001. Résultat: à exécuter.

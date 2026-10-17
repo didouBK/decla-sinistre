@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#102c3b">
   <meta name="description" content="Démonstration fictive du parcours de déclaration d’un dégât des eaux.">
   <title>DéclaSinistre — Déclarer un dégât des eaux</title>
-  <link rel="stylesheet" href="style.css?v=20261017-ux2">
+  <link rel="stylesheet" href="style.css?v=20261017-qa1">
 </head>
 <body>
   <header class="topbar">
@@ -14,7 +14,7 @@
       <span class="brand-mark" aria-hidden="true">D</span>
       <span class="brand-name">décla<span>sinistre</span></span>
     </a>
-    <div class="topbar-meta"><span class="demo-dot"></span> Démonstration fictive</div>
+    <div class="topbar-meta"><button class="tracking-trigger" id="tracking-trigger" type="button">Suivre une déclaration</button><span class="demo-dot"></span> Démonstration fictive</div>
   </header>
 
   <main id="top" class="page-shell">
@@ -45,6 +45,17 @@
 
     <footer class="site-footer"><span>DéclaSinistre <span class="footer-sep">/</span> Cas pratique fictif</span><span>Les règles et chiffres présentés sont des hypothèses de démonstration.</span></footer>
   </main>
-  <script src="app.js?v=20261017-ux"></script>
+  <dialog id="tracking-dialog" class="tracking-dialog" aria-labelledby="tracking-title">
+    <button class="dialog-close" id="tracking-close" type="button" aria-label="Fermer">×</button>
+    <p class="eyebrow">SUIVI DE DÉMONSTRATION</p>
+    <h2 id="tracking-title">Suivre une déclaration</h2>
+    <p class="form-lead">Saisissez la référence créée dans ce navigateur. Ce suivi est local et fictif.</p>
+    <form id="tracking-form">
+      <label class="field-label" for="tracking-reference">Référence de démonstration<input id="tracking-reference" name="tracking-reference" autocomplete="off" placeholder="DS-DEMO-123456" required></label>
+      <button class="button button-primary" type="submit">Consulter le statut</button>
+    </form>
+    <div id="tracking-result" class="tracking-result" role="status" aria-live="polite"></div>
+  </dialog>
+  <script src="app.js?v=20261017-qa1"></script>
 </body>
 </html>

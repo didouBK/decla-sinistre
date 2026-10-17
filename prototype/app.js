@@ -108,4 +108,36 @@ function bind() {
   };
 }
 
+function bindTracking() {
+  const dialog = $('#tracking-dialog');
+  const reference = $('#tracking-reference');
+  const result = $('#tracking-result');
+  const savedStatus = () => {
+    try { return JSON.parse(localStorage.getItem('decla-status') || 'null'); }
+    catch { return null; }
+  };
+  const displayStatus = value => {
+    const saved = savedStatus();
+    if (!saved || saved.ref !== value.trim()) {
+      result.innerHTML = '<p class="error">Aucune déclaration de démonstration ne correspond à cette référence dans ce navigateur.</p>';
+      return;
+    }
+    result.innerHTML = `<div class="tracking-success"><span>Statut de la déclaration</span><strong>${esc(saved.status)}</strong><small>Référence ${esc(saved.ref)} · Donnée fictive enregistrée localement</small></div>`;
+  };
+  $('#tracking-trigger').onclick = () => {
+    const saved = savedStatus();
+    reference.value = saved?.ref || '';
+    result.innerHTML = saved ? '' : '<p class="callout">Aucun dépôt fictif n’a encore été enregistré dans ce navigateur.</p>';
+    if (saved) displayStatus(saved.ref);
+    dialog.showModal();
+    reference.focus();
+  };
+  $('#tracking-close').onclick = () => dialog.close();
+  $('#tracking-form').onsubmit = event => {
+    event.preventDefault();
+    displayStatus(reference.value);
+  };
+}
+
+bindTracking();
 render();

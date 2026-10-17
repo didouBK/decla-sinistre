@@ -1,5 +1,9 @@
 # DéclaSinistre
 
+[![Qualité CI](https://github.com/didouBK/decla-sinistre/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/didouBK/decla-sinistre/actions/workflows/ci.yml)
+
+**Étude de cas portfolio — Business Analysis, QA et pilotage produit**
+
 **Digitalisation fictive du parcours de déclaration d’un dégât des eaux — assurance IARD**
 
 > Cas pratique portfolio intégralement fictif. Les chiffres, acteurs, règles, données et résultats de pilotage sont des hypothèses ou simulations. Aucun assureur réel ni donnée client réelle ne sont impliqués. Ce projet n’est pas utilisé en production.
@@ -31,7 +35,7 @@ Le prototype statique est dans `prototype/`; le dashboard Streamlit dans `dashbo
 - **UX/technique :** prototype accessible de base, responsive, Streamlit/Pandas/Plotly.
 
 ## Livrables
-Commencer par [l’index documentaire](docs/index.md), puis [expression de besoin](docs/ba/expression-besoin.md), [stories](docs/ba/user-stories.md), [règles](docs/ba/regles-gestion.md), [matrice QA](docs/qa/matrice-tracabilite.md), [roadmap](docs/pilotage/roadmap.md), [registre des risques](docs/pilotage/registre-risques.md) et [architecture](docs/architecture/architecture.md).
+Commencer par [l’étude de cas portfolio](docs/portfolio/cas-portfolio.md) et [l’index documentaire](docs/index.md), puis [expression de besoin](docs/ba/expression-besoin.md), [stories](docs/ba/user-stories.md), [règles](docs/ba/regles-gestion.md), [matrice QA](docs/qa/matrice-tracabilite.md), [roadmap](docs/pilotage/roadmap.md), [registre des risques](docs/pilotage/registre-risques.md) et [architecture](docs/architecture/architecture.md).
 
 ## Installation et exécution
 Python 3.11+ recommandé.
@@ -49,6 +53,16 @@ Dashboard depuis la racine: `streamlit run dashboard/app.py`.
 ## Tests
 `python3 scripts/validate_project.py` puis `python3 -m pytest -q`. Les fichiers `.feature` sont des spécifications; l’automatisation pytest vérifie les référentiels, liens et exports, pas l’exécution navigateur. Les scénarios UI doivent être joués manuellement et consignés. Les nombres de tests passés ne sont pas inventés.
 
+Les parcours navigateur automatisés sont exécutés avec Playwright et reliés aux TC/US par leur identifiant dans le nom de chaque test. Pour les lancer localement :
+
+```bash
+npm ci
+npx playwright install chromium
+npm run test:e2e
+```
+
+La CI publie le rapport Playwright comme artefact de chaque exécution. TC-015 reste une mesure manuelle du temps de parcours : le dépôt ne prétend pas avoir mesuré un résultat utilisateur. La couverture QA suivie dans le dashboard est la couverture des scénarios métier par US; aucune couverture de lignes de code n’est revendiquée.
+
 ## Limites et améliorations
 Aucun backend, compte réel, sécurité de production, contrôle antivirus, stockage documentaire, audit de conformité ou validation métier indépendante. Les statuts et données de pilotage sont simulés. Suite possible: tests navigateur automatisés, validation des règles par un référent métier, étude de sécurité/confidentialité, puis architecture authentifiée et journalisée avant tout usage réel.
 
@@ -57,6 +71,6 @@ Aucun backend, compte réel, sécurité de production, contrôle antivirus, stoc
 - **Prototype GitHub Pages :** [ouvrir la démonstration](https://didoubk.github.io/decla-sinistre/). Le workflow `.github/workflows/deploy-pages.yml` publie `prototype/` à chaque changement sur `main`.
 - **Dashboard Streamlit :** [ouvrir le tableau de pilotage](https://decla-sinistre-x9mfsvb3qxpanxxc4gmnhu.streamlit.app/). Il est connecté au dépôt `didouBK/decla-sinistre`, branche `main`, fichier `dashboard/app.py`.
 
-Le dashboard propose aussi un onglet **QA · Tests et couverture** : lancement de `scripts/validate_project.py` et de pytest, suivi des 15 cas manuels liés aux US, couverture d’exécution par US et export CSV du plan et du journal. Les résultats sont conservés pendant la session Streamlit; ils ne sont pas partagés entre utilisateurs ni stockés durablement. Les tests navigateur doivent être exécutés manuellement sur le prototype.
+Le dashboard propose aussi un onglet **QA · Tests et couverture** : lancement des contrôles du dépôt, suivi des 15 cas liés aux US, couverture d’exécution par US et export CSV du plan et du journal. Les résultats manuels sont conservés pendant la session Streamlit; ils ne sont pas partagés entre utilisateurs ni stockés durablement. Les tests navigateur automatisés sont exécutés en CI et leur rapport est disponible comme artefact GitHub Actions.
 
 Aucun backend ni service externe ne reçoit les données du prototype. Les données du dashboard sont fictives et les indicateurs sont des simulations.
