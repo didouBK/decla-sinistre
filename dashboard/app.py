@@ -1,374 +1,61 @@
-"""Portfolio dashboard and session-based QA test console for the fictitious claim journey."""
+YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíó¿5N‹Z–‹­¦ëeŠw¬Ôˆˆ‰A½ÉÑ™½±¥¼‘…Í¡‰½…É…¹Í•ÍÍ¥½¸µ‰…Í•EÑ•ÍĞ½¹Í½±”™½ÈÑ¡”™¥Ñ¥Ñ¥½ÕÌ±…¥´©½ÕÉ¹•ä¸ˆˆˆ()™É½´}}™ÕÑÕÉ•}|¥µÁ½ÉĞ…¹¹½Ñ…Ñ¥½¹Ì()¥µÁ½ÉĞ©Í½¸)¥µÁ½ÉĞÉ”)¥µÁ½ÉĞÍÕ‰ÁÉ½•ÍÌ)¥µÁ½ÉĞÍåÌ)™É½´‘…Ñ•Ñ¥µ”¥µÁ½ÉĞ‘…Ñ•Ñ¥µ”°Ñ¥µ•é½¹”)™É½´Á…Ñ¡±¥ˆ¥µÁ½ÉĞA…Ñ )™É½´ÕÉ±±¥ˆ¹•ÉÉ½È¥µÁ½ÉĞ!QQAÉÉ½È°UI1ÉÉ½È)™É½´ÕÉ±±¥ˆ¹É•ÅÕ•ÍĞ¥µÁ½ÉĞI•ÅÕ•ÍĞ°ÕÉ±½Á•¸()¥µÁ½ÉĞÁ…¹‘…Ì…ÌÁ)¥µÁ½ÉĞÁ±½Ñ±ä¹•áÁÉ•ÍÌ…ÌÁà)¥µÁ½ÉĞÍÑÉ•…µ±¥Ğ…ÌÍĞ(()I==P€ôA…Ñ ¡}}™¥±•}|¤¹É•Í½±Ù” ¤¹Á…É•¹ÑÍlÅt)É•˜€ô©Í½¸¹±½…‘Ì ¡I==P€¼€‰‘…Ñ„½É•™•É•¹Ñ¥•°¹©Í½¸ˆ¤¹É•…‘}Ñ•áĞ¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤¤)Á¥±½Ğ€ô©Í½¸¹±½…‘Ì ¡I==P€¼€‰‘…Ñ„½Á¥±½Ñ…”¹©Í½¸ˆ¤¹É•…‘}Ñ•áĞ¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤¤)‰…­±½œ€ôÁ¹É•…‘}ÍØ¡I==P€¼€‰‘½Ì½Á¥±½Ñ…”½‰…­±½œ¹ÍØˆ¤)É¥Í¬€ôÁ¹É•…‘}ÍØ¡I==P€¼€‰‘½Ì½Á¥±½Ñ…”½É•¥ÍÑÉ”µÉ¥ÍÅÕ•Ì¹ÍØˆ¤)ÍÑ½É¥•Ì€ô‰…­±½m‰…­±½l‰ÑåÁ”‰t€ôô€‰MÑ½Éä‰t¹½Áä ¤()ÍĞ¹Í•Ñ}Á…•}½¹™¥œ¡Á…•}Ñ¥Ñ±”ô‰¥±…M¥¹¥ÍÑÉ”ƒ
+ÜA¥±½Ñ…”€˜Eˆ°Á…•}¥½¸ô‹Š^ ˆ°±…å½ÕĞô‰İ¥‘”ˆ¤)ÍĞ¹µ…É­‘½İ¸ (€€€€ˆˆˆ(€€€€ñÍÑå±”ø(€€€€éÉ½½Ğì€´µ¥¹¬èŒÄäÌÌĞÈì€´µ¹…ÙäèŒÄÀÉŒÍˆì€´µÑ•…°èŒÀàİ”Üàì€´µµÕÑ•èŒØàİŒàÈì€´µ±¥¹”è”Í•‰”àìô(€€€€¹ÍÑÁÀì‰…­É½Õ¹é±¥¹•…ÈµÉ…‘¥•¹Ğ ÄàÁ‘•œ°˜É˜Ù˜Ô€À°˜İ˜å˜à€ÌĞÁÁà°˜İ˜å˜à€ÄÀÀ”¤ì½±½ÈéÙ…È ´µ¥¹¬¤ì™½¹Ğµ™…µ¥±äèµ…ÁÁ±”µÍåÍÑ•´±	±¥¹­5…MåÍÑ•µ½¹Ğ°M•½”U$œ±Í…¹ÌµÍ•É¥˜ìô(€€€€¹‰±½¬µ½¹Ñ…¥¹•Èìµ…àµİ¥‘Ñ èÄÌÈÁÁàìÁ…‘‘¥¹œµÑ½ÀèÈ¸ÍÉ•´ìÁ…‘‘¥¹œµ‰½ÑÑ½´èÌ¸ÕÉ•´ìô(€€€ Ä± È± Ìì™½¹Ğµ™…µ¥±äèµ…ÁÁ±”µÍåÍÑ•´±	±¥¹­5…MåÍÑ•µ½¹Ğ°M•½”U$œ±Í…¹ÌµÍ•É¥˜…¥µÁ½ÉÑ…¹Ğì±•ÑÑ•ÈµÍÁ…¥¹œè´¸ÕÁàì½±½ÈéÙ…È ´µ¹…Ùä¤…¥µÁ½ÉÑ…¹Ğìô(€€€ Äì™½¹ĞµÍ¥é”èÈ¸ÅÉ•´…¥µÁ½ÉÑ…¹Ğì™½¹Ğµİ•¥¡ĞèÜÀÀ…¥µÁ½ÉÑ…¹Ğìµ…É¥¸è¸ÈÕÉ•´€À€¸ÍÉ•´…¥µÁ½ÉÑ…¹Ğìô(€€€ Èì™½¹ĞµÍ¥é”èÄ¸ÈÉÉ•´…¥µÁ½ÉÑ…¹Ğì™½¹Ğµİ•¥¡ĞèÜÀÀ…¥µÁ½ÉÑ…¹Ğìµ…É¥¸µÑ½ÀèÄ¸ÉÉ•´…¥µÁ½ÉÑ…¹Ğìô(€€€ Ìì™½¹ĞµÍ¥é”èÅÉ•´…¥µÁ½ÉÑ…¹Ğì™½¹Ğµİ•¥¡ĞèÜÀÀ…¥µÁ½ÉÑ…¹Ğìô(€€€€¹‘…Í µÑ½Á±¥¹”ì‘¥ÍÁ±…äé™±•àì…±¥¸µ¥Ñ•µÌé•¹Ñ•Èì©ÕÍÑ¥™äµ½¹Ñ•¹ĞéÍÁ…”µ‰•Ñİ••¸ì…ÀèÄÙÁàìµ…É¥¸µ‰½ÑÑ½´èÄáÁàìô(€€€€¹‘…Í µ‰É…¹ì‘¥ÍÁ±…äé™±•àì…±¥¸µ¥Ñ•µÌé•¹Ñ•Èì…ÀèÄÁÁàì½±½ÈèŒØÀÜØİŒì™½¹ĞµÍ¥é”èÄÍÁàì™½¹Ğµİ•¥¡ĞèÜÀÀì±•ÑÑ•ÈµÍÁ…¥¹œè¸ÀÉ•´ìô(€€€€¹‘…Í µµ…É¬ìİ¥‘Ñ èÌÅÁàì¡•¥¡ĞèÌÅÁàì‘¥ÍÁ±…äéÉ¥ìÁ±…”µ¥Ñ•µÌé•¹Ñ•Èì‰½É‘•ÈµÉ…‘¥ÕÌèÄÁÁàì‰…­É½Õ¹èŒÄÀÉŒÍˆì½±½Èè„å‘™Ìì™½¹Ğµİ•¥¡ĞèàÀÀì™½¹ĞµÍ¥é”èÄÙÁàìô(€€€€¹‘•µ¼µÁ¥±°ì‰½É‘•ÈèÅÁàÍ½±¥€”Õåˆàì‰½É‘•ÈµÉ…‘¥ÕÌèäåÁàì‰…­É½Õ¹è™‰˜Ù”äì½±½ÈèŒàÔØØÉ„ì™½¹ĞµÍ¥é”èÄÅÁàì™½¹Ğµİ•¥¡ĞèÜÀÀìÁ…‘‘¥¹œèÙÁà€ÄÅÁàì±•ÑÑ•ÈµÍÁ…¥¹œè¸ÀÍ•´ìô(€€€€¹¡•É¼µ½Áäì½±½ÈèŒÙ„İŒàÀì™½¹ĞµÍ¥é”èÄÑÁàìµ…É¥¸èÀ€À€Ä¸ÌÕÉ•´ìô(€€€m‘…Ñ„µÑ•ÍÑ¥ô‰ÍÑ5•ÑÉ¥Œ‰tì‰…­É½Õ¹è™™˜ì‰½É‘•ÈèÅÁàÍ½±¥Ù…È ´µ±¥¹”¤ì‰½É‘•ÈµÉ…‘¥ÕÌèÄÍÁàìÁ…‘‘¥¹œèÄİÁà€ÄáÁàì‰½àµÍ¡…‘½ÜèÀ€ÕÁà€ÈÁÁàÉ‰„ ÈÀ°ÔÄ°ØÄ°¸ÀÌÔ¤ìµ¥¸µ¡•¥¡ĞèÄÀÕÁàìô(€€€m‘…Ñ„µÑ•ÍÑ¥ô‰ÍÑ5•ÑÉ¥1…‰•°‰tÀì½±½ÈèŒÜÌàÔá„…¥µÁ½ÉÑ…¹Ğì™½¹ĞµÍ¥é”èÄÉÁà…¥µÁ½ÉÑ…¹Ğì™½¹Ğµİ•¥¡ĞèØÀÀ…¥µÁ½ÉÑ…¹Ğìô(€€€m‘…Ñ„µÑ•ÍÑ¥ô‰ÍÑ5•ÑÉ¥Y…±Õ”‰tì½±½ÈéÙ…È ´µ¹…Ùä¤…¥µÁ½ÉÑ…¹Ğì™½¹ĞµÍ¥é”èÄ¸ÔÕÉ•´…¥µÁ½ÉÑ…¹Ğì™½¹Ğµİ•¥¡ĞèÜÀÀ…¥µÁ½ÉÑ…¹Ğìô(€€€m‘…Ñ„µÑ•ÍÑ¥ô‰ÍÑ5•ÑÉ¥•±Ñ„‰tì‘¥ÍÁ±…äé¹½¹”ìô(€€€‘¥Ùm‘…Ñ„µÑ•ÍÑ¥ô‰ÍÑY•ÉÑ¥…±	±½­	½É‘•É]É…ÁÁ•È‰tì‰…­É½Õ¹è™™˜ì‰½É‘•ÈèÅÁàÍ½±¥Ù…È ´µ±¥¹”¤ì‰½É‘•ÈµÉ…‘¥ÕÌèÄÑÁàìÁ…‘‘¥¹œèÄİÁà€ÄåÁàìô(€€€€¹Í•Ñ¥½¸µ­¥­•Èì½±½ÈèŒÜÈàØá„ì™½¹ĞµÍ¥é”èÄÁÁàì™½¹Ğµİ•¥¡ĞèÜÀÀì±•ÑÑ•ÈµÍÁ…¥¹œèÅÁàìÑ•áĞµÑÉ…¹Í™½É´éÕÁÁ•É…Í”ìµ…É¥¸èÀ€À€ÕÁàìô(€€€€¹¹½Ñ”µ‰½àì‰½É‘•ÈèÅÁàÍ½±¥€‘•…”Ôì‰½É‘•Èµ±•™ĞèÍÁàÍ½±¥€ŒÈØáˆİ”ì‰½É‘•ÈµÉ…‘¥ÕÌèáÁàì‰…­É½Õ¹è˜Á˜İ˜Ğì½±½ÈèŒÔàÜÄÙ”ìÁ…‘‘¥¹œèÄÅÁà€ÄÑÁàì™½¹ĞµÍ¥é”èÄÉÁàì±¥¹”µ¡•¥¡ĞèÄ¸ÔÔìµ…É¥¸èÄÁÁà€Àìô(€€€€¹ÑÉ…”µ¡¥Àì‘¥ÍÁ±…äé¥¹±¥¹”µ‰±½¬ì‰½É‘•ÈèÅÁàÍ½±¥€å”á”Ìì‰½É‘•ÈµÉ…‘¥ÕÌèäåÁàì‰…­É½Õ¹è˜Å˜á˜Ôì½±½ÈèŒÄÜÙˆØÈìÁ…‘‘¥¹œèÑÁà€åÁàìµ…É¥¸èÍÁà€ÑÁà€ÍÁà€Àì™½¹ĞµÍ¥é”èÄÅÁàì™½¹Ğµİ•¥¡ĞèÜÀÀìô(€€€€¹ÍÑ…Ñ…É…µ”ì‰½É‘•ÈèÅÁàÍ½±¥Ù…È ´µ±¥¹”¤ì‰½É‘•ÈµÉ…‘¥ÕÌèÄÅÁàì½Ù•É™±½Üé¡¥‘‘•¸ìô(€€€‘¥Ùm‘…Ñ„µÑ•ÍÑ¥ô‰ÍÑ±•ÉĞ‰tì‰½É‘•ÈµÉ…‘¥ÕÌèÄÅÁàìô(€€€µ•‘¥„€¡µ…àµİ¥‘Ñ èÜÀÁÁà¤ì€¹‰±½¬µ½¹Ñ…¥¹•ÈìÁ…‘‘¥¹œèÄ¸ÍÉ•´€ÅÉ•´€ÉÉ•´ìô Äì™½¹ĞµÍ¥é”èÄ¸ØÕÉ•´…¥µÁ½ÉÑ…¹Ğìô€¹‘…Í µÑ½Á±¥¹”ì…±¥¸µ¥Ñ•µÌé™±•àµÍÑ…ÉĞìôô(€€€€ğ½ÍÑå±”ø(€€€€ñ‘¥Ø±…ÍÌô‰‘…Í µÑ½Á±¥¹”ˆøñ‘¥Ø±…ÍÌô‰‘…Í µ‰É…¹ˆøñÍÁ…¸±…ÍÌô‰‘…Í µµ…É¬ˆùğ½ÍÁ…¸ø%1M%9%MQI€ñÍÁ…¸ÍÑå±”ô‰½±½Èè„åˆİˆÜí™½¹Ğµİ•¥¡ĞèÔÀÀˆø¼A%1=Q€˜Eğ½ÍÁ…¸øğ½‘¥ØøñÍÁ…¸±…ÍÌô‰‘•µ¼µÁ¥±°ˆùL%Q%ƒ
+Ü=9;%LM%5U3%Lğ½ÍÁ…¸øğ½‘¥Øø(€€€€ñÀ±…ÍÌô‰Í•Ñ¥½¸µ­¥­•ÈˆùA¥±½Ñ…”ÁÉ½‘Õ¥Ğğ½Àø(€€€€ñ ÄùMÕ¥ÙÉ”±”Á…É½ÕÉÌ‘”“¥±…É…Ñ¥½¸ğ½ Äø(€€€€ñÀ±…ÍÌô‰¡•É¼µ½ÁäˆùÙ…¹•µ•¹Ğ°É¥ÍÅÕ•Ì°•ã¥ÕÑ¥½¸‘•ÌÑ•ÍÑÌ•Ğ½ÕÙ•ÉÑÕÉ”‘•Ì¡Õ¥ĞÕÍ•ÈÍÑ½É¥•Ì¸ğ½Àø(€€€€ˆˆˆ°(€€€Õ¹Í…™•}…±±½İ}¡Ñµ°õQÉÕ”°(¤(()‘•˜±½…‘}ÍÑ½Éå}Ñ•ÍÑ}±¥¹­Ì ¤€´ø‘¥ÑmÍÑÈ°±¥ÍÑmÍÑÉutè(€€€€ˆˆ‰I•…Ñ¡”•áÁ±¥¥ĞQ±¥¹­Ì¥¸•… UL°Ñ¡•¸¥¹±Õ‘”©½ÕÉ¹•äµİ¥‘”¡•­Ì¸ˆˆˆ(€€€‘½Œ€ô€¡I==P€¼€‰‘½Ì½‰„½ÕÍ•ÈµÍÑ½É¥•Ì¹µˆ¤¹É•…‘}Ñ•áĞ¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤(€€€±¥¹­Ì€ôíÍÑ½Éål‰¥‰tèmt™½ÈÍÑ½Éä¥¸É•™l‰ÍÑ½É¥•Ì‰uô(€€€‰±½­Ì€ôÉ”¹ÍÁ±¥Ğ¡Èˆ üõxŒŒULµq‘ìÍô¤ˆ°‘½Œ°™±…ÌõÉ”¹5U1Q%1%9¤(€€€™½È‰±½¬¥¸‰±½­Ìè(€€€€€€€µ…Ñ¡}ÍÑ½Éä€ôÉ”¹µ…Ñ ¡ÈˆŒŒ€¡ULµq‘ìÍô¤ˆ°‰±½¬¤(€€€€€€€µ…Ñ¡}Ñ•ÍÑÌ€ôÉ”¹Í•…É ¡È‰p©p©Q•ÍÑÌ€ép©p©qÌ¨¡myq¸¹t¬¤ˆ°‰±½¬¤(€€€€€€€¥˜¹½Ğ€¡µ…Ñ¡}ÍÑ½Éä…¹µ…Ñ¡}Ñ•ÍÑÌ¤è(€€€€€€€€€€€½¹Ñ¥¹Õ”(€€€€€€€ÍÑ½Éå}¥€ôµ…Ñ¡}ÍÑ½Éä¹É½ÕÀ Ä¤(€€€€€€€±¥¹­ÍmÍÑ½Éå}¥‘t€ôÉ”¹™¥¹‘…±°¡È‰Qµq‘ìÍôˆ°µ…Ñ¡}Ñ•ÍÑÌ¹É½ÕÀ Ä¤¤(€€€€ŒQ¡•Í”¹½¸µ™Õ¹Ñ¥½¹…°¡•­Ì…ÁÁ±äÑ¼Ñ¡”™Õ±°‘•±…É…Ñ¥½¸©½ÕÉ¹•ä¸(€€€…±±}ÍÑ½É¥•Ì€ô±¥ÍĞ¡±¥¹­Ì¤(€€€™½ÈÑ•ÍÑ}¥¥¸€ ‰Q´ÀÄĞˆ°€‰Q´ÀÄÔˆ¤è(€€€€€€€™½ÈÍÑ½Éå}¥¥¸…±±}ÍÑ½É¥•Ìè(€€€€€€€€€€€±¥¹­ÍmÍÑ½Éå}¥‘t¹…ÁÁ•¹¡Ñ•ÍÑ}¥¤(€€€É•ÑÕÉ¸±¥¹­Ì(()MQ=Ie}QMQL€ô±½…‘}ÍÑ½Éå}Ñ•ÍÑ}±¥¹­Ì ¤)QMQM}	e}%€ôíÑ•ÍÑl‰¥‰tèÑ•ÍĞ™½ÈÑ•ÍĞ¥¸É•™l‰Ñ•ÍÑÌ‰uô)MQ=I%M}	e}%€ôíÍÑ½Éål‰¥‰tèÍÑ½Éä™½ÈÍÑ½Éä¥¸É•™l‰ÍÑ½É¥•Ì‰uô)IEU%I59QM}	e}%€ôí¥Ñ•µl‰¥‰tè¥Ñ•´™½È¥Ñ•´¥¸É•™l‰É•ÅÕ¥É•µ•¹ÑÌ‰uô)IU1M}	e}%€ôí¥Ñ•µl‰¥‰tè¥Ñ•´™½È¥Ñ•´¥¸É•™l‰ÉÕ±•Ì‰uô)QUI}%1L€ôíÍÑ½Éå}¥èI==P€¼€‰Ñ•ÍÑÌ½™•…ÑÕÉ•Ìˆ€¼˜‰íÍÑ½Éå}¥¹±½İ•È ¥ô¹™•…ÑÕÉ”ˆ™½ÈÍÑ½Éå}¥¥¸MQ=I%M}	e}%ô)QMQ}MQ=I%L€ôíÑ•ÍÑ}¥èmÍÑ½Éå}¥™½ÈÍÑ½Éå}¥°¥‘Ì¥¸MQ=Ie}QMQL¹¥Ñ•µÌ ¤¥˜Ñ•ÍÑ}¥¥¸¥‘Ít™½ÈÑ•ÍÑ}¥¥¸QMQM}	e}%ô)É}%1€ôI==P€¼€‰Ñ•ÍÑÌ½”É”½ÁÉ½Ñ½ÑåÁ”¹ÍÁ•Œ¹©Ìˆ)É}QMQ}%L€ôÍ•Ğ¡É”¹™¥¹‘…±°¡È‰Qµq‘ìÍôˆ°É}%1¹É•…‘}Ñ•áĞ¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤¤¤¥˜É}%1¹•á¥ÍÑÌ ¤•±Í”Í•Ğ ¤(()ÍĞ¹…¡•}‘…Ñ„¡ÑÑ°ôÄÈÀ°Í¡½İ}ÍÁ¥¹¹•Èõ…±Í”¤)‘•˜±…Ñ•ÍÑ}¥Ñ¡Õ‰}¥}ÉÕ¸ ¤€´ø‘¥Ğğ9½¹”è(€€€€ˆˆ‰I•…Ñ¡”ÁÕ‰±¥ŒÍÑ…ÑÕÌ½˜Ñ¡”±…Ñ•ÍĞµ…¥¸µ‰É…¹ Ñ•ÍĞİ½É­™±½Ü¸ˆˆˆ(€€€É•ÅÕ•ÍĞ€ôI•ÅÕ•ÍĞ (€€€€€€€€‰¡ÑÑÁÌè¼½…Á¤¹¥Ñ¡Õˆ¹½´½É•Á½Ì½‘¥‘½Õ	,½‘•±„µÍ¥¹¥ÍÑÉ”½…Ñ¥½¹Ì½ÉÕ¹ÌıÁ•É}Á…”ôÄÀˆ°(€€€€€€€¡•…‘•ÉÌõì‰•ÁĞˆè€‰…ÁÁ±¥…Ñ¥½¸½Ù¹¹¥Ñ¡Õˆ­©Í½¸ˆ°€‰UÍ•Èµ•¹Ğˆè€‰‘•±„µÍ¥¹¥ÍÑÉ”µÅ„µ‘…Í¡‰½…É‰ô°(€€€€¤(€€€ÑÉäè(€€€€€€€İ¥Ñ ÕÉ±½Á•¸¡É•ÅÕ•ÍĞ°Ñ¥µ•½ÕĞôà¤…ÌÉ•ÍÁ½¹Í”è(€€€€€€€€€€€Á…å±½…€ô©Í½¸¹±½…‘Ì¡É•ÍÁ½¹Í”¹É•… ¤¹‘•½‘” ‰ÕÑ˜´àˆ¤¤(€€€•á•ÁĞ€¡!QQAÉÉ½È°UI1ÉÉ½È°Q¥µ•½ÕÑÉÉ½È°=MÉÉ½È°Y…±Õ•ÉÉ½È¤è(€€€€€€€É•ÑÕÉ¸9½¹”(€€€ÉÕ¹Ì€ôl(€€€€€€€ÉÕ¸™½ÈÉÕ¸¥¸Á…å±½…¹•Ğ ‰İ½É­™±½İ}ÉÕ¹Ìˆ°mt¤(€€€€€€€¥˜ÉÕ¸¹•Ğ ‰¹…µ”ˆ¤€ôô€‰ÅÕ…±¥Ñäˆ…¹ÉÕ¸¹•Ğ ‰¡•…‘}‰É…¹ ˆ¤€ôô€‰µ…¥¸ˆ(€€€t(€€€¥˜¹½ĞÉÕ¹Ìè(€€€€€€€É•ÑÕÉ¸9½¹”(€€€ÉÕ¸€ôµ…à¡ÉÕ¹Ì°­•äõ±…µ‰‘„¥Ñ•´è¥Ñ•´¹•Ğ ‰É•…Ñ•‘}…Ğˆ°€ˆˆ¤¤(€€€É•ÑÕÉ¸ì(€€€€€€€€‰ÍÑ…ÑÕÌˆèÉÕ¸¹•Ğ ‰ÍÑ…ÑÕÌˆ°€‰Õ¹­¹½İ¸ˆ¤°(€€€€€€€€‰½¹±ÕÍ¥½¸ˆèÉÕ¸¹•Ğ ‰½¹±ÕÍ¥½¸ˆ¤°(€€€€€€€€‰É•…Ñ•‘}…ĞˆèÉÕ¸¹•Ğ ‰É•…Ñ•‘}…Ğˆ°€ˆˆ¤°(€€€€€€€€‰ÕÉ°ˆèÉÕ¸¹•Ğ ‰¡Ñµ±}ÕÉ°ˆ°€‰¡ÑÑÁÌè¼½¥Ñ¡Õˆ¹½´½‘¥‘½Õ	,½‘•±„µÍ¥¹¥ÍÑÉ”½…Ñ¥½¹Ìˆ¤°(€€€ô()¥˜€‰Å…}É•ÍÕ±ÑÌˆ¹½Ğ¥¸ÍĞ¹Í•ÍÍ¥½¹}ÍÑ…Ñ”è(€€€ÍĞ¹Í•ÍÍ¥½¹}ÍÑ…Ñ”¹Å…}É•ÍÕ±ÑÌ€ôíô)¥˜€‰Å…}…ÕÑ½}ÉÕ¹Ìˆ¹½Ğ¥¸ÍĞ¹Í•ÍÍ¥½¹}ÍÑ…Ñ”è(€€€ÍĞ¹Í•ÍÍ¥½¹}ÍÑ…Ñ”¹Å…}…ÕÑ½}ÉÕ¹Ì€ômt)¥˜€‰Å…}¡¥ÍÑ½Éäˆ¹½Ğ¥¸ÍĞ¹Í•ÍÍ¥½¹}ÍÑ…Ñ”è(€€€ÍĞ¹Í•ÍÍ¥½¹}ÍÑ…Ñ”¹Å…}¡¥ÍÑ½Éä€ômt()½Ù•ÉÙ¥•İ}Ñ…ˆ°Å…}Ñ…ˆ€ôÍĞ¹Ñ…‰Ì¡l‰A¥±½Ñ…”ˆ°€‰Eƒ
+ÜQ•ÍÑÌ•Ğ½ÕÙ•ÉÑÕÉ”‰t¤()İ¥Ñ ½Ù•ÉÙ¥•İ}Ñ…ˆè(€€€‘½¹”€ô¥¹Ğ¡ÍÑ½É¥•Íl‰ÍÑ…ÑÕĞ‰t¹ÍÑÈ¹ÍÑ…ÉÑÍİ¥Ñ  ‰Q•Éµ¥»¤ˆ¤¹ÍÕ´ ¤¤(€€€Ñ½Ñ…°€ô±•¸¡ÍÑ½É¥•Ì¤(€€€½µÁ±•Ñ¥½¸€ô‘½¹”€¼Ñ½Ñ…°¥˜Ñ½Ñ…°•±Í”€À(€€€Ñ•ÍÑ…‰±”€ôm¥Ñ•´™½È¥Ñ•´¥¸É•™l‰É—~üÖÚ$z{-®éÜj×İ]\Ù\ÈHØ[Ü™\İ[Ë™Ù]
+\İÚYßJK™Ù]
+œİ]\È‹°à^0êXİ]\ˆŠH›Üˆ\İÚY[ˆ\İÚY×Bˆ^Xİ]YHİ[Jİ]\È[ˆ^Xİ]YÜİ]\Ù\È›Üˆİ]\È[ˆİ]\Ù\ÊBˆ\ÜÙYHİ[Jİ]\ÈOH”°ê]\ÜÚHˆ›Üˆİ]\È[ˆİ]\Ù\ÊBˆ˜Z[YHİ[Jİ]\ÈOH°âXÚXÈˆ›Üˆİ]\È[ˆİ]\Ù\ÊBˆ›ØÚÙYHİ[Jİ]\ÈOH›Ü]pêHˆ›Üˆİ]\È[ˆİ]\Ù\ÊBˆÛİ™\˜YÙHH^Xİ]YÈ[Š\İÚYÊHYˆ\İÚYÈ[ÙHˆYˆ˜Z[Y‚ˆİ™\˜[H°àÛÜœšYÙ\ˆ‚ˆ[Yˆ\İÚYÈ[™\ÜÙYOH[Š\İÚYÊN‚ˆİ™\˜[H•˜[Y0êYH‚ˆ[Yˆ^Xİ]YÜˆ›ØÚÙY‚ˆİ™\˜[H‘[ˆÛİ\œÈ‚ˆ[ÙN‚ˆİ™\˜[H°à^0êXİ]\ˆ‚ˆİÜWÜ›İÜË˜\[™
+Âˆ•TÈˆİÜWÚY•\Ù\ˆİÜHˆİÜVÈ]H—K•Èpê\Èˆ[Š\İÚYÊKˆØ\ÈL‘HˆˆÙL™WØÛİ[HÈÛ[Š\İÚYÊ_H‹ˆ‘^0êXİ]0ê\Èˆ^Xİ]Y”°ê]\ÜÚ\Èˆ\ÜÙY°âXÚXÜÈˆ˜Z[Yˆ›Ü]pê\Èˆ›ØÚÙYÛİ]™\\™H8 &Y^0êXİ][ÛˆˆˆØÛİ™\˜YÙN‹Œ	_H‹°â]]ˆİ™\˜[ˆJB‚ˆ\ÚYÛ—ØÛİ™\™YHİ[J›ÛÛ
+ÕÔ–WÕTÕË™Ù]
+İÜWÚY
+JH›ÜˆİÜWÚY[ˆÕÔ’QT×Ğ–WÒQ
+Bˆ^Xİ]YÜİÜšY\ÈHİ[J›İÖÈ‘^0êXİ]0ê\È—Hˆ›Üˆ›İÈ[ˆİÜWÜ›İÜÊBˆ˜Z[YØÛİ[Hİ[J™\İ[™Ù]
+œİ]\ÈŠHOH°âXÚXÈˆ›Üˆ™\İ[[ˆ[Ü™\İ[Ë˜[Y\Ê
+JBˆ\ÜÙYØÛİ[Hİ[J™\İ[™Ù]
+œİ]\ÈŠHOH”°ê]\ÜÚHˆ›Üˆ™\İ[[ˆ[Ü™\İ[Ë˜[Y\Ê
+JBˆ›ØÚÙYØÛİ[Hİ[J™\İ[™Ù]
+œİ]\ÈŠHOH›Ü]pêHˆ›Üˆ™\İ[[ˆ[Ü™\İ[Ë˜[Y\Ê
+JBˆØ\Ù\×İİ[H[ŠTÕ×Ğ–WÒQ
+BˆL™WØÛİ™\™YH[ŠL‘WÕTÕÒQËš[\œÙXİ[ÛŠTÕ×Ğ–WÒQ
+JBˆXWÛY]šXÜÈHİ˜ÛÛ[[œÊJBˆXWÛY]šXÜÖÌK›Y]šXÊ•TÈÛİ]™\\È\ˆÛÛ˜Ù\[Ûˆ‹ˆÙ\ÚYÛ—ØÛİ™\™YHÈÛ[ŠÕÔ’QT×Ğ–WÒQ
+_HŠBˆXWÛY]šXÜÖÌWK›Y]šXÊ•È]™XÈØğê[˜\š[ÈL‘H‹ˆÙL™WØÛİ™\™YHÈØØ\Ù\×İİ[HŠBˆXWÛY]šXÜÖÌ—K›Y]šXÊ•TÈ]™XÈ^0êXİ][ÛˆX[Y[H‹ˆÙ^Xİ]YÜİÜšY\ßHÈÛ[ŠÕÔ’QT×Ğ–WÒQ
+_HŠBˆXWÛY]šXÜÖÌ×K›Y]šXÊØ\È°ê]\ÜÚ\ÈX[Y[[Y[‹ˆÜ\ÜÙYØÛİ[HÈØØ\Ù\×İİ[HŠBˆXWÛY]šXÜÖÍK›Y]šXÊ°âXÚXÜÈÈ›Ü]pê\È‹ˆÙ˜Z[YØÛİ[HÈØ›ØÚÙYØÛİ[HŠBˆİ™]Yœ˜[YJ‘]Qœ˜[YJİÜWÜ›İÜÊK\ÙWØÛÛZ[™\—İÚYUYKYWÚ[™^UYJB‚ˆİœİXšXY\Š‘^0êXİ]\ˆ[ˆØğê[˜\š[Èpê]Y\ˆŠBˆİ›X\šÙİÛŠÚÚ\Ú\ÜÙ^ˆ[ˆØ\ËİZ]™^ˆÙ\ÈÜš]0ê™\È]ÛÛœÚYÛ™^ˆH°ê\İ[]\°êÈ8 &X]›Ú\ˆ›İpêH[œÈH›İİ\HX›pêKˆŠBˆ\İÚYÈH\İ
+TÕ×Ğ–WÒQ
+BˆÙ[XİYÚYHİœÙ[Xİ›Ş
+ˆØ\ÈH\İ‹ˆ\İÚYËˆ›Ü›X]Ù[˜Ï[[X™H\İÚYˆˆİ\İÚYH0­ÈÕTÕ×Ğ–WÒQİ\İÚYVÉİ]I×_H‹ˆ
+BˆÙ[XİYİ\İHTÕ×Ğ–WÒQÜÙ[XİYÚYBˆ[šÙYÜİÜšY\ÈHTÕÔÕÔ’QTË™Ù]
+Ù[XİYÚY×JBˆ[šÜÈHÙ[XİYİ\İÈ›[šÜÈ—KœÜ]
+ÈŠBˆ[šÙYÜ™\]Z\™[Y[ÈHÔ‘TURT‘SQS•×Ğ–WÒQÛ[š×H›Üˆ[šÈ[ˆ[šÜÈYˆ[šÈ[ˆ‘TURT‘SQS•×Ğ–WÒQBˆ[šÙYÜ[\ÈHÔ•ST×Ğ–WÒQÛ[š×H›Üˆ[šÈ[ˆ[šÜÈYˆ[šÈ[ˆ•ST×Ğ–WÒQBˆ[šÙYÜİÜWÛ˜[Y\ÈHÙˆÜİÜWÚYH0­ÈÔÕÔ’QT×Ğ–WÒQÜİÜWÚYVÉİ]I×_Hˆ›ÜˆİÜWÚY[ˆ[šÙYÜİÜšY\×Bˆİ›X\šÙİÛŠŠŠ•\Ù\ˆİÜšY\ÈpêY\ÊŠœˆˆ
+Èˆ‹š›Ú[Š‰ÏÜ[ˆÛ\ÜÏH˜XÙKXÚ\ÜİÜ_OÜÜ[‰È›ÜˆİÜH[ˆ[šÙYÜİÜWÛ˜[Y\ÊK[œØY™WØ[İ×Ú[UYJBˆİ›X\šÙİÛŠŠŠ‘^YÙ[˜Ù\ÈpêY\ÈŠŠˆˆ
+È
+ˆ0­È‹š›Ú[ŠˆÚ][VÉÚY	×_H8 %Ú][VÉİ]I×_Hˆ›Üˆ][H[ˆ[šÙYÜ™\]Z\™[Y[ÊHÜˆ˜]Xİ[™HŠJBˆYˆ[šÙYÜ[\Î‚ˆÚ]İ™^[™\Š”°êÛ\Èpê]Y\ˆ]°ê\İ[]][™HŠN‚ˆ›Üˆ[H[ˆ[šÙYÜ[\Î‚ˆİ›X\šÙİÛŠˆŠŠÜ[VÉÚY	×_H0­ÈÜ[VÉİ]I×_JŠˆ8 %Ü[VÉÙ\ØÜš\[Û‰×_HŠBˆYˆÙ[XİYÚY[ˆÈ•ËLM‹•ËLMHŸN‚ˆİš[™›ÊØ\È˜[œİ™\œÙHˆ0è°ê\šYšY\ˆİ\ˆH\˜Ûİ\œÈÛÛ\]İ\ˆ\ÈZ]TËˆŠBˆ™X]\™WÛ˜[Y\ÈHÑ‘PUT‘WÑ’STÖÜİÜWÚYK›˜[YH›ÜˆİÜWÚY[ˆ[šÙYÜİÜšY\ÈYˆİÜWÚY[ˆ‘PUT‘WÑ’STÈ[™‘PUT‘WÑ’STÖÜİÜWÚYK™^\İÊ
+WBˆYˆ™X]\™WÛ˜[Y\Î‚ˆİ˜Ø\[ÛŠ”Ü0êXÚYšXØ][ÛœÈÚ\šÚ[ˆ\ÜÛØÚpêY\Èˆˆ
+È‹‹š›Ú[Š™X]\™WÛ˜[Y\ÊJB‚ˆ™]š[İ\×Ü™XÛÜ™H[Ü™\İ[Ë™Ù]
+Ù[XİYÚYßJBˆİ]\×ÛÜ[ÛœÈHÈ°à^0êXİ]\ˆ‹”°ê]\ÜÚH‹°âXÚXÈ‹›Ü]pêH—Bˆ™]š[İ\×Üİ]\ÈH™]š[İ\×Ü™XÛÜ™™Ù]
+œİ]\È‹°à^0êXİ]\ˆŠBˆÚ]İ™›Ü›J›X[X[İ\İÜ™\İ[‹ÛX\—ÛÛ—ÜİX›Z]Q˜[ÙJN‚ˆ™\İ[Üİ]\ÈHİœÙ[Xİ›Ş
+”°ê\İ[]HØğê[˜\š[È‹İ]\×ÛÜ[ÛœË[™^\İ]\×ÛÜ[ÛœËš[™^
+™]š[İ\×Üİ]\ÊJBˆ^Xİ]ÜˆHİ^Ú[œ]
+‘^0êXİ]0êH\ˆ
+˜Xİ[]YŠH‹˜[YO\™]š[İ\×Ü™XÛÜ™™Ù]
+™^Xİ]Üˆ‹ˆŠKXÙZÛ\H“›ÛHİH°íHŠBˆ]šY[˜ÙHHİ^Ø\™XJ“ØœÙ\˜][ÛˆÈ™]]™H‹˜[YO\™]š[İ\×Ü™XÛÜ™™Ù]
+™]šY[˜ÙH‹ˆŠKXÙZÛ\H”°ê\İ[]ØœÙ\°êK°êY°ê\™[˜ÙHHØ\\™HİH[›ÛX[Yx )ˆŠBˆØ]™WÜ™\İ[Hİ™›Ü›WÜİX›Z]Ø]ÛŠ‘[œ™YÚ\İ™\ˆH°ê\İ[]ŠBˆYˆØ]™WÜ™\İ[‚ˆ™XÛÜ™HÂˆœİ]\Èˆ™\İ[Üİ]\Ëˆ™^Xİ]Üˆˆ^Xİ]Ü‹œİš\
 
-from __future__ import annotations
+Kˆ™]šY[˜ÙHˆ]šY[˜ÙKœİš\
 
-import json
-import re
-import subprocess
-import sys
-from datetime import datetime, timezone
-from pathlib import Path
+Kˆ™^Xİ]YØ]ˆ]][YK››İÊ[Y^›Û™K]ÊKš\ÛÙ›Ü›X]
 
-import pandas as pd
-import plotly.express as px
-import streamlit as st
-
-
-ROOT = Path(__file__).resolve().parents[1]
-ref = json.loads((ROOT / "data/referentiel.json").read_text(encoding="utf-8"))
-pilot = json.loads((ROOT / "data/pilotage.json").read_text(encoding="utf-8"))
-backlog = pd.read_csv(ROOT / "docs/pilotage/backlog.csv")
-risk = pd.read_csv(ROOT / "docs/pilotage/registre-risques.csv")
-stories = backlog[backlog["type"] == "Story"].copy()
-
-st.set_page_config(page_title="DÃ©claSinistre Â· Pilotage & QA", page_icon="â—ˆ", layout="wide")
-st.markdown(
-    """
-    <style>
-    :root { --ink:#193342; --navy:#102c3b; --teal:#087e78; --muted:#687c82; --line:#e3ebe8; }
-    .stApp { background:linear-gradient(180deg,#f2f6f5 0,#f7f9f8 340px,#f7f9f8 100%); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
-    .block-container { max-width:1320px; padding-top:2.3rem; padding-bottom:3.5rem; }
-    h1,h2,h3 { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important; letter-spacing:-.5px; color:var(--navy)!important; }
-    h1 { font-size:2.1rem!important; font-weight:700!important; margin:.25rem 0 .3rem!important; }
-    h2 { font-size:1.22rem!important; font-weight:700!important; margin-top:1.2rem!important; }
-    h3 { font-size:1rem!important; font-weight:700!important; }
-    .dash-topline { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px; }
-    .dash-brand { display:flex; align-items:center; gap:10px; color:#60767c; font-size:13px; font-weight:700; letter-spacing:.02em; }
-    .dash-mark { width:31px; height:31px; display:grid; place-items:center; border-radius:10px; background:#102c3b; color:#a9dfd3; font-weight:800; font-size:16px; }
-    .demo-pill { border:1px solid #e5d9b8; border-radius:99px; background:#fbf6e9; color:#85662a; font-size:11px; font-weight:700; padding:6px 11px; letter-spacing:.03em; }
-    .hero-copy { color:#6a7c80; font-size:14px; margin:0 0 1.35rem; }
-    [data-testid="stMetric"] { background:#fff; border:1px solid var(--line); border-radius:13px; padding:17px 18px; box-shadow:0 5px 20px rgba(20,51,61,.035); min-height:105px; }
-    [data-testid="stMetricLabel"] p { color:#73858a!important; font-size:12px!important; font-weight:600!important; }
-    [data-testid="stMetricValue"] { color:var(--navy)!important; font-size:1.55rem!important; font-weight:700!important; }
-    [data-testid="stMetricDelta"] { display:none; }
-    div[data-testid="stVerticalBlockBorderWrapper"] { background:#fff; border:1px solid var(--line); border-radius:14px; padding:17px 19px; }
-    .section-kicker { color:#72868a; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin:0 0 5px; }
-    .note-box { border:1px solid #dceae5; border-left:3px solid #268b7e; border-radius:8px; background:#f0f7f4; color:#58716e; padding:11px 14px; font-size:12px; line-height:1.55; margin:10px 0; }
-    .trace-chip { display:inline-block; border:1px solid #d9e8e3; border-radius:99px; background:#f1f8f5; color:#176b62; padding:4px 9px; margin:3px 4px 3px 0; font-size:11px; font-weight:700; }
-    .stDataFrame { border:1px solid var(--line); border-radius:11px; overflow:hidden; }
-    div[data-testid="stAlert"] { border-radius:11px; }
-    @media (max-width:700px) { .block-container { padding:1.3rem 1rem 2rem; } h1 { font-size:1.65rem!important; } .dash-topline { align-items:flex-start; } }
-    </style>
-    <div class="dash-topline"><div class="dash-brand"><span class="dash-mark">D</span> DÃ‰CLASINISTRE <span style="color:#a9b7b7;font-weight:500">/ PILOTAGE & QA</span></div><span class="demo-pill">CAS FICTIF Â· DONNÃ‰ES SIMULÃ‰ES</span></div>
-    <p class="section-kicker">Pilotage produit</p>
-    <h1>Suivre le parcours de dÃ©claration</h1>
-    <p class="hero-copy">Avancement, risques, exÃ©cution des tests et couverture des huit user stories.</p>
-    """,
-    unsafe_allow_html=True,
-)
-
-
-def load_story_test_links() -> dict[str, list[str]]:
-    """Read the explicit TC links in each US, then include journey-wide checks."""
-    doc = (ROOT / "docs/ba/user-stories.md").read_text(encoding="utf-8")
-    links = {story["id"]: [] for story in ref["stories"]}
-    blocks = re.split(r"(?=^## US-\d{3})", doc, flags=re.MULTILINE)
-    for block in blocks:
-        match_story = re.match(r"## (US-\d{3})", block)
-        match_tests = re.search(r"\*\*Tests :\*\*\s*([^\n.]+)", block)
-        if not (match_story and match_tests):
-            continue
-        story_id = match_story.group(1)
-        links[story_id] = re.findall(r"TC-\d{3}", match_tests.group(1))
-    # These non-functional checks apply to the full declaration journey.
-    all_stories = list(links)
-    for test_id in ("TC-014", "TC-015"):
-        for story_id in all_stories:
-            links[story_id].append(test_id)
-    return links
-
-
-STORY_TESTS = load_story_test_links()
-TESTS_BY_ID = {test["id"]: test for test in ref["tests"]}
-STORIES_BY_ID = {story["id"]: story for story in ref["stories"]}
-REQUIREMENTS_BY_ID = {item["id"]: item for item in ref["requirements"]}
-RULES_BY_ID = {item["id"]: item for item in ref["rules"]}
-FEATURE_FILES = {story_id: ROOT / "tests/features" / f"{story_id.lower()}.feature" for story_id in STORIES_BY_ID}
-TEST_STORIES = {test_id: [story_id for story_id, ids in STORY_TESTS.items() if test_id in ids] for test_id in TESTS_BY_ID}
-E2E_FILE = ROOT / "tests/e2e/prototype.spec.js"
-E2E_TEST_IDS = set(re.findall(r"TC-\d{3}", E2E_FILE.read_text(encoding="utf-8"))) if E2E_FILE.exists() else set()
-
-if "qa_results" not in st.session_state:
-    st.session_state.qa_results = {}
-if "qa_auto_runs" not in st.session_state:
-    st.session_state.qa_auto_runs = []
-if "qa_history" not in st.session_state:
-    st.session_state.qa_history = []
-
-overview_tab, qa_tab = st.tabs(["Pilotage", "QA Â· Tests et couverture"])
-
-with overview_tab:
-    done = int(stories["statut"].str.startswith("TerminÃ©").sum())
-    total = len(stories)
-    completion = done / total if total else 0
-    testable = [item for item in ref["requirements"] if item["testable"]]
-    covered = sum(any(item["id"] in test["links"].split(";") for test in ref["tests"]) for item in testable)
-
-    metric_columns = st.columns(4)
-    metric_columns[0].metric("Stories terminÃ©es", f"{done} / {total}", help="Stories terminÃ©es dans le backlog fictif.")
-    metric_columns[1].metric("Avancement simulÃ©", f"{completion:.0%}", help="Part des stories marquÃ©es terminÃ©es.")
-    metric_columns[2].metric("Exigences liÃ©es", f"{covered} / {len(testable)}", help="Exigences testables ayant un lien vers au moins un cas de test.")
-    metric_columns[3].metric("ExÃ©cution produit", "Non mesurÃ©e", help="Aucun rÃ©sultat de test navigateur nâ€™est enregistrÃ©.")
-
-    st.markdown('<p class="section-kicker" style="margin-top:25px">Progression et capacitÃ©</p>', unsafe_allow_html=True)
-    left, right = st.columns([1.05, 0.95], gap="large")
-    with left:
-        st.subheader("Backlog par prioritÃ©")
-        priority_order = ["Must", "Should", "Could", "Won't", "Must have", "Should have", "Could have", "Won't have"]
-        backlog_chart = px.histogram(
-            stories, x="priorite", color="statut", barmode="group",
-            category_orders={"priorite": priority_order},
-            color_discrete_sequence=["#0b7f78", "#d9a64e", "#9baeb0", "#d97e68"],
-            labels={"priorite": "PrioritÃ©", "statut": "Statut", "count": "Stories"},
-        )
-        backlog_chart.update_layout(
-            template="plotly_white", height=320, margin=dict(l=8, r=10, t=20, b=8),
-            paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-            font=dict(family="Arial, sans-serif", color="#61747b", size=11),
-            legend=dict(orientation="h", y=-.22, x=0), bargap=.28,
-        )
-        backlog_chart.update_xaxes(title=None, showgrid=False, linecolor="#e5ece9")
-        backlog_chart.update_yaxes(title=None, gridcolor="#edf1ef", zeroline=False)
-        st.plotly_chart(backlog_chart, use_container_width=True, config={"displayModeBar": False})
-    with right:
-        st.subheader("Sprints simulÃ©s")
-        sprints = pd.DataFrame([
-            {"Sprint": sprint["name"], "Points terminÃ©s": sprint["done"], "CapacitÃ© thÃ©orique": sprint["start_capacity"]}
-            for sprint in pilot["sprints"]
-        ])
-        velocity_chart = px.bar(
-            sprints, x="Sprint", y="Points terminÃ©s", text="Points terminÃ©s",
-            color_discrete_sequence=["#238b80"], labels={"Sprint": "", "Points terminÃ©s": "Story points"},
-        )
-        velocity_chart.update_traces(textposition="outside", marker_cornerradius=5, cliponaxis=False)
-        velocity_chart.update_layout(
-            template="plotly_white", height=320, margin=dict(l=8, r=10, t=20, b=8),
-            paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-            font=dict(family="Arial, sans-serif", color="#61747b", size=11), showlegend=False,
-        )
-        velocity_chart.update_xaxes(title=None, showgrid=False, linecolor="#e5ece9")
-        velocity_chart.update_yaxes(title=None, gridcolor="#edf1ef", zeroline=False, rangemode="tozero")
-        st.plotly_chart(velocity_chart, use_container_width=True, config={"displayModeBar": False})
-        st.caption("Story points relatifs, dÃ©finis pour le scÃ©nario. Ils ne mesurent pas une performance individuelle.")
-
-    st.subheader("Burndown illustratif")
-    burndown_rows = [
-        {"Sprint": sprint["name"], "Jour": day, "Points restants": remaining}
-        for sprint in pilot["sprints"] for day, remaining in enumerate(sprint["remaining_daily"])
-    ]
-    burndown = px.line(
-        pd.DataFrame(burndown_rows), x="Jour", y="Points restants", color="Sprint", markers=True,
-        color_discrete_sequence=["#087e78", "#d5a04c", "#6b8491"],
-        labels={"Jour": "Jour du sprint", "Points restants": "Story points restants"},
-    )
-    burndown.update_layout(
-        template="plotly_white", height=300, margin=dict(l=8, r=10, t=15, b=8),
-        paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-        font=dict(family="Arial, sans-serif", color="#61747b", size=11),
-        legend=dict(orientation="h", y=1.12, x=0),
-    )
-    burndown.update_xaxes(title=None, showgrid=False, linecolor="#e5ece9")
-    burndown.update_yaxes(title=None, gridcolor="#edf1ef", zeroline=False)
-    st.plotly_chart(burndown, use_container_width=True, config={"displayModeBar": False})
-    st.caption("Source : data/pilotage.json. Les valeurs de vÃ©locitÃ© et de burndown sont des simulations.")
-
-    st.markdown('<p class="section-kicker" style="margin-top:28px">MaÃ®trise et couverture documentaire</p>', unsafe_allow_html=True)
-    risks_column, coverage_column = st.columns([1.15, 0.85], gap="large")
-    with risks_column:
-        st.subheader("Registre des risques")
-        risk["CriticitÃ© P Ã— I"] = risk["probabilite_1_5"] * risk["impact_1_5"]
-        risk_view = risk.rename(columns={
-            "description": "Risque", "probabilite_1_5": "ProbabilitÃ© / 5", "impact_1_5": "Impact / 5",
-            "responsable": "Responsable", "statut": "Statut",
-        })[["Risque", "ProbabilitÃ© / 5", "Impact / 5", "CriticitÃ© P Ã— I", "Responsable", "Statut"]]
-        st.dataframe(risk_view, use_container_width=True, hide_index=True)
-    with coverage_column:
-        st.subheader("TraÃ§abilitÃ© des exigences")
-        st.metric("Exigences testables liÃ©es Ã  un cas", f"{covered} / {len(testable)}")
-        st.progress(covered / len(testable) if testable else 0, text=f"Couverture documentaire : {covered / len(testable):.0%}" if testable else "Aucune exigence testable")
-        st.markdown('<div class="note-box">Un lien documentaire vers un cas de test ne prouve pas que ce cas a Ã©tÃ© exÃ©cutÃ©.</div>', unsafe_allow_html=True)
-
-    st.subheader("Indicateurs mÃ©tier : cibles Ã  Ã©tudier")
-    indicators = pd.DataFrame([
-        {"Indicateur": "Dossiers incomplets", "HypothÃ¨se initiale": "30 %", "Cible indicative": "â‰¤ 10 %", "Mesure": "Non mesurÃ©e"},
-        {"Indicateur": "Prise en charge initiale", "HypothÃ¨se initiale": "5 jours", "Cible indicative": "â‰¤ 1 jour ouvrÃ©", "Mesure": "Non mesurÃ©e"},
-        {"Indicateur": "DurÃ©e de dÃ©claration", "HypothÃ¨se initiale": "Ã€ mesurer", "Cible indicative": "< 5 min", "Mesure": "Non mesurÃ©e"},
-    ])
-    st.dataframe(indicators, use_container_width=True, hide_index=True)
-    st.markdown('<div class="note-box"><strong>Important :</strong> toutes les donnÃ©es et cibles sont fictives. Aucun assureur nâ€™est connectÃ© et aucune donnÃ©e rÃ©elle nâ€™est collectÃ©e.</div>', unsafe_allow_html=True)
-
-
-with qa_tab:
-    st.markdown('<p class="section-kicker">Assurance qualitÃ© Â· rÃ©fÃ©rentiel de test</p>', unsafe_allow_html=True)
-    st.subheader("ExÃ©cuter les contrÃ´les automatiques")
-    st.markdown(
-        "Les contrÃ´les automatiques vÃ©rifient la structure du rÃ©fÃ©rentiel et les exports du dÃ©pÃ´t. "
-        "Les tests navigateur Playwright sont lancÃ©s par la CI GitHub Actions; "
-        "les scÃ©narios mÃ©tier non automatisÃ©s et la mesure de durÃ©e restent Ã  jouer manuellement dans le prototype. "
-        "[Voir le workflow de tests](https://github.com/didouBK/decla-sinistre/actions/workflows/ci.yml)."
-    )
-    if st.button("Lancer les contrÃ´les qualitÃ©", type="primary", key="run_quality"):
-        commands = {
-            "validate_project.py": [sys.executable, "scripts/validate_project.py"],
-            "pytest": [sys.executable, "-m", "pytest", "-q"],
-        }
-        run_record = {"started_at": datetime.now(timezone.utc).isoformat(), "checks": {}}
-        with st.spinner("ExÃ©cution des contrÃ´les du dÃ©pÃ´tâ€¦"):
-            for name, command in commands.items():
-                try:
-                    result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True, timeout=90, check=False)
-                    run_record["checks"][name] = {
-                        "passed": result.returncode == 0,
-                        "returncode": result.returncode,
-                        "output": (result.stdout + result.stderr).strip(),
-                    }
-                except subprocess.TimeoutExpired as exc:
-                    partial = (exc.stdout or "") + (exc.stderr or "")
-                    run_record["checks"][name] = {"passed": False, "returncode": None, "output": f"DÃ©lai dÃ©passÃ©.\n{partial}"}
-                except Exception as exc:  # display environment failures in the QA console
-                    run_record["checks"][name] = {"passed": False, "returncode": None, "output": f"Impossible de lancer le contrÃ´le : {exc}"}
-        st.session_state.qa_auto_runs.insert(0, run_record)
-
-    if st.session_state.qa_auto_runs:
-        latest_run = st.session_state.qa_auto_runs[0]
-        run_time = latest_run["started_at"].replace("T", " ").split(".")[0] + " UTC"
-        st.caption(f"DerniÃ¨re exÃ©cution automatique : {run_time}")
-        cols = st.columns(len(latest_run["checks"]))
-        for column, (name, result) in zip(cols, latest_run["checks"].items()):
-            column.metric(name, "RÃ©ussi" if result["passed"] else "Ã‰chec")
-            with st.expander(f"DÃ©tails Â· {name}"):
-                st.code(result["output"] or "Aucune sortie.", language="text")
-    else:
-        st.info("Aucun contrÃ´le automatique lancÃ© dans cette session.")
-
-    st.divider()
-    st.subheader("Couverture liÃ©e aux user stories")
-    st.caption("Les cas E2E sont dÃ©duits des identifiants TC prÃ©sents dans tests/e2e/prototype.spec.js. La couverture de conception vient des liens dÃ©clarÃ©s dans docs/ba/user-stories.md. TC-014 et TC-015 sont transverses Ã  tout le parcours; TC-015 reste une mesure manuelle.")
-
-    all_results = st.session_state.qa_results
-    executed_statuses = {"RÃ©ussi", "Ã‰chec"}
-    story_rows = []
-    for story_id, story in STORIES_BY_ID.items():
-        test_ids = STORY_TESTS.get(story_id, [])
-        e2e_count = sum(test_id in E2E_TEST_IDS for test_id in test_ids)
-        statuses = [all_results.get(test_id, {}).get("status", "Ã€ exÃ©cuter") for test_id in test_ids]
-        executed = sum(status in executed_statuses for status in statuses)
-        passed = sum(status == "RÃ©ussi" for status in statuses)
-        failed = sum(status == "Ã‰chec" for status in statuses)
-        blocked = sum(status == "BloquÃ©" for status in statuses)
-        coverage = executed / len(test_ids) if test_ids else 0
-        if failed:
-            overall = "Ã€ corriger"
-        elif test_ids and passed == len(test_ids):
-            overall = "ValidÃ©e"
-        elif executed or blocked:
-            overall = "En cours"
-        else:
-            overall = "Ã€ exÃ©cuter"
-        story_rows.append({
-            "US": story_id, "User story": story["title"], "TC liÃ©s": len(test_ids),
-            "Cas E2E": f"{e2e_count} / {len(test_ids)}",
-            "ExÃ©cutÃ©s": executed, "RÃ©ussis": passed, "Ã‰checs": failed,
-            "BloquÃ©s": blocked, "Couverture dâ€™exÃ©cution": f"{coverage:.0%}", "Ã‰tat": overall,
-        })
-
-    design_covered = sum(bool(STORY_TESTS.get(story_id)) for story_id in STORIES_BY_ID)
-    executed_stories = sum(row["ExÃ©cutÃ©s"] > 0 for row in story_rows)
-    failed_count = sum(result.get("status") == "Ã‰chec" for result in all_results.values())
-    passed_count = sum(result.get("status") == "RÃ©ussi" for result in all_results.values())
-    blocked_count = sum(result.get("status") == "BloquÃ©" for result in all_results.values())
-    cases_total = len(TESTS_BY_ID)
-    e2e_covered = len(E2E_TEST_IDS.intersection(TESTS_BY_ID))
-    qa_metrics = st.columns(5)
-    qa_metrics[0].metric("US couvertes par conception", f"{design_covered} / {len(STORIES_BY_ID)}")
-    qa_metrics[1].metric("TC avec scÃ©nario E2E", f"{e2e_covered} / {cases_total}")
-    qa_metrics[2].metric("US avec exÃ©cution manuelle", f"{executed_stories} / {len(STORIES_BY_ID)}")
-    qa_metrics[3].metric("Cas rÃ©ussis manuellement", f"{passed_count} / {cases_total}")
-    qa_metrics[4].metric("Ã‰checs / bloquÃ©s", f"{failed_count} / {blocked_count}")
-    st.dataframe(pd.DataFrame(story_rows), use_container_width=True, hide_index=True)
-
-    st.subheader("ExÃ©cuter un scÃ©nario mÃ©tier")
-    st.markdown("Choisissez un cas, suivez ses critÃ¨res et consignez le rÃ©sultat aprÃ¨s lâ€™avoir jouÃ© dans le prototype publiÃ©.")
-    test_ids = list(TESTS_BY_ID)
-    selected_id = st.selectbox(
-        "Cas de test",
-        test_ids,
-        format_func=lambda test_id: f"{test_id} Â· {TESTS_BY_ID[test_id]['title']}",
-    )
-    selected_test = TESTS_BY_ID[selected_id]
-    linked_stories = TEST_STORIES.get(selected_id, [])
-    links = selected_test["links"].split(";")
-    linked_requirements = [REQUIREMENTS_BY_ID[link] for link in links if link in REQUIREMENTS_BY_ID]
-    linked_rules = [RULES_BY_ID[link] for link in links if link in RULES_BY_ID]
-    linked_story_names = [f"{story_id} Â· {STORIES_BY_ID[story_id]['title']}" for story_id in linked_stories]
-    st.markdown("**User stories liÃ©es**<br>" + " ".join(f'<span class="trace-chip">{story}</span>' for story in linked_story_names), unsafe_allow_html=True)
-    st.markdown("**Exigences liÃ©es :** " + (" Â· ".join(f"{item['id']} â€” {item['title']}" for item in linked_requirements) or "aucune"))
-    if linked_rules:
-        with st.expander("RÃ¨gles mÃ©tier et rÃ©sultat attendu"):
-            for rule in linked_rules:
-                st.markdown(f"**{rule['id']} Â· {rule['title']}** â€” {rule['description']}")
-    if selected_id in {"TC-014", "TC-015"}:
-        st.info("Cas transverse : Ã  vÃ©rifier sur le parcours complet, pour les huit US.")
-    feature_names = [FEATURE_FILES[story_id].name for story_id in linked_stories if story_id in FEATURE_FILES and FEATURE_FILES[story_id].exists()]
-    if feature_names:
-        st.caption("SpÃ©cifications Gherkin associÃ©es : " + ", ".join(feature_names))
-
-    previous_record = all_results.get(selected_id, {})
-    status_options = ["Ã€ exÃ©cuter", "RÃ©ussi", "Ã‰chec", "BloquÃ©"]
-    previous_status = previous_record.get("status", "Ã€ exÃ©cuter")
-    with st.form("manual_test_result", clear_on_submit=False):
-        result_status = st.selectbox("RÃ©sultat du scÃ©nario", status_options, index=status_options.index(previous_status))
-        executor = st.text_input("ExÃ©cutÃ© par (facultatif)", value=previous_record.get("executor", ""), placeholder="Nom ou rÃ´le")
-        evidence = st.text_area("Observation / preuve", value=previous_record.get("evidence", ""), placeholder="RÃ©sultat observÃ©, rÃ©fÃ©rence de capture ou anomalieâ€¦")
-        save_result = st.form_submit_button("Enregistrer le rÃ©sultat")
-    if save_result:
-        record = {
-            "status": result_status,
-            "executor": executor.strip(),
-            "evidence": evidence.strip(),
-            "executed_at": datetime.now(timezone.utc).isoformat() if result_status != "Ã€ exÃ©cuter" else "",
-        }
-        st.session_state.qa_results[selected_id] = record
-        if result_status != "Ã€ exÃ©cuter":
-            st.session_state.qa_history.insert(0, {"test_id": selected_id, **record})
-            st.session_state.qa_saved_message = f"RÃ©sultat de {selected_id} enregistrÃ© dans cette session."
-        st.rerun()
-    if st.session_state.get("qa_saved_message"):
-        st.success(st.session_state.pop("qa_saved_message"))
-
-    st.subheader("Journal des exÃ©cutions manuelles")
-    history_rows = []
-    for record in st.session_state.qa_history:
-        test_id = record["test_id"]
-        test = TESTS_BY_ID[test_id]
-        history_rows.append({
-            "Date UTC": record.get("executed_at", ""),
-            "TC": test_id,
-            "ScÃ©nario": test["title"],
-            "US liÃ©es": ", ".join(TEST_STORIES.get(test_id, [])),
-            "RÃ©sultat": record.get("status", ""),
-            "ExÃ©cutÃ© par": record.get("executor", ""),
-            "Observation / preuve": record.get("evidence", ""),
-        })
-    if history_rows:
-        history = pd.DataFrame(history_rows)
-        st.dataframe(history, use_container_width=True, hide_index=True)
-        csv_data = history.to_csv(index=False).encode("utf-8-sig")
-        st.download_button("Exporter lâ€™historique QA en CSV", csv_data, "decla-sinistre-journal-qa.csv", "text/csv")
-    else:
-        st.info("Aucun rÃ©sultat manuel enregistrÃ©. Les rÃ©sultats restent dans cette session Streamlit; exportez lâ€™historique pour lâ€™archiver.")
-
-    plan_rows = [
-        {
-            "TC": test_id,
-            "ScÃ©nario": test["title"],
-            "US liÃ©es": ", ".join(TEST_STORIES.get(test_id, [])),
-            "Liens exigences et rÃ¨gles": test["links"],
-            "RÃ©sultat courant": all_results.get(test_id, {}).get("status", "Ã€ exÃ©cuter"),
-        }
-        for test_id, test in TESTS_BY_ID.items()
-    ]
-    plan_csv = pd.DataFrame(plan_rows).to_csv(index=False).encode("utf-8-sig")
-    st.download_button("Exporter le plan de test et sa couverture CSV", plan_csv, "decla-sinistre-plan-de-test.csv", "text/csv")
-
-    st.markdown('<div class="note-box"><strong>PortÃ©e :</strong> les rÃ©sultats saisis et les contrÃ´les lancÃ©s depuis ce tableau sont propres Ã  cette session Streamlit. Aucun stockage durable ni synchronisation entre utilisateurs nâ€™est configurÃ©. La couverture affichÃ©e porte sur les scÃ©narios par US; la couverture des lignes de code nâ€™est pas mesurÃ©e. Les rapports Playwright sont archivÃ©s dans les artefacts GitHub Actions.</div>', unsafe_allow_html=True)
+HYˆ™\İ[Üİ]\ÈOH°à^0êXİ]\ˆˆ[ÙHˆ‹ˆBˆİœÙ\ÜÚ[Û—Üİ]KœXWÜ™\İ[ÖÜÙ[XİYÚYHH™XÛÜ™ˆYˆ™\İ[Üİ]\ÈOH°à^0êXİ]\ˆ‚ˆİœÙ\ÜÚ[Û—Üİ]KœXWÚ\İÜKš[œÙ\
+È\İÚYˆÙ[XİYÚY
+Šœ™XÛÜ™JBˆİœÙ\ÜÚ[Û—Üİ]KœXWÜØ]™YÛY\ÜØYÙHHˆ”°ê\İ[]HÜÙ[XİYÚYH[œ™YÚ\İ°êH[œÈÙ]HÙ\ÜÚ[Û‹ˆ‚ˆİœ™\[Š
+BˆYˆİœÙ\ÜÚ[Û—Üİ]K™Ù]
+œXWÜØ]™YÛY\ÜØYÙHŠN‚ˆİœİXØÙ\ÜÊİœÙ\ÜÚ[Û—Üİ]KœÜ
+œXWÜØ]™YÛY\ÜØYÙHŠJB‚ˆİœİXšXY\Š’›İ\›˜[\È^0êXİ][ÛœÈX[Y[\ÈŠBˆ\İÜWÜ›İÜÈH×Bˆ›Üˆ™XÛÜ™[ˆİœÙ\ÜÚ[Û—Üİ]KœXWÚ\İÜN‚ˆ\İÚYH™XÛÜ™È\İÚY—Bˆ\İHTÕ×Ğ–WÒQİ\İÚYBˆ\İÜWÜ›İÜË˜\[™
+Âˆ‘]HUÈˆ™XÛÜ™™Ù]
+™^Xİ]YØ]‹ˆŠKˆ•Èˆ\İÚYˆ”Øğê[˜\š[Èˆ\İÈ]H—Kˆ•TÈpêY\Èˆ‹‹š›Ú[ŠTÕÔÕÔ’QTË™Ù]
+\İÚY×JJKˆ”°ê\İ[]ˆ™XÛÜ™™Ù]
+œİ]\È‹ˆŠKˆ‘^0êXİ]0êH\ˆˆ™XÛÜ™™Ù]
+™^Xİ]Üˆ‹ˆŠKˆ“ØœÙ\˜][ÛˆÈ™]]™Hˆ™XÛÜ™™Ù]
+™]šY[˜ÙH‹ˆŠKˆJBˆYˆ\İÜWÜ›İÜÎ‚ˆ\İÜHH‘]Qœ˜[YJ\İÜWÜ›İÜÊBˆİ™]Yœ˜[YJ\İÜK\ÙWØÛÛZ[™\—İÚYUYKYWÚ[™^UYJBˆÜİ—Ù]HH\İÜK×ØÜİŠ[™^Q˜[ÙJK™[˜ÛÙJ]‹N\ÚYÈŠBˆİ™İÛ›ØYØ]ÛŠ‘^Ü\ˆ8 &Z\İÜš\]YHPH[ˆÔÕˆ‹Üİ—Ù]K™XÛK\Ú[š\İ™KZ›İ\›˜[\XK˜Üİˆ‹^ØÜİˆŠBˆ[ÙN‚ˆİš[™›Ê]Xİ[ˆ°ê\İ[]X[Y[[œ™YÚ\İ°êKˆ\È°ê\İ[]È™\İ[[œÈÙ]HÙ\ÜÚ[Ûˆİ™X[[]È^Ü^ˆ8 &Z\İÜš\]YHİ\ˆ8 &X\˜Ú]™\‹ˆŠB‚ˆ[—Ü›İÜÈHÂˆÂˆ•Èˆ\İÚYˆ”Øğê[˜\š[Èˆ\İÈ]H—Kˆ•TÈpêY\Èˆ‹‹š›Ú[ŠTÕÔÕÔ’QTË™Ù]
+\İÚY×JJKˆ“Y[œÈ^YÙ[˜Ù\È]°êÛ\Èˆ\İÈ›[šÜÈ—Kˆ”°ê\İ[]Ûİ\˜[ˆ[Ü™\İ[Ë™Ù]
+\İÚYßJK™Ù]
+œİ]\È‹°à^0êXİ]\ˆŠKˆBˆ›Üˆ\İÚY\İ[ˆTÕ×Ğ–WÒQš][\Ê
+BˆBˆ[—ØÜİˆH‘]Qœ˜[YJ[—Ü›İÜÊK×ØÜİŠ[™^Q˜[ÙJK™[˜ÛÙJ]‹N\ÚYÈŠBˆİ™İÛ›ØYØ]ÛŠ‘^Ü\ˆH[ˆH\İ]ØHÛİ]™\\™HÔÕˆ‹[—ØÜİ‹™XÛK\Ú[š\İ™K\[‹YK]\İ˜Üİˆ‹^ØÜİˆŠB‚ˆİ›X\šÙİÛŠ	Ï]ˆÛ\ÜÏH››İKX›Şİ›Û™Ï”Ü0êYHÜİ›Û™Ïˆ\È°ê\İ[]ÈØZ\Ú\È]\ÈÛÛ°í\È[˜ğê\È\Z\ÈÙHX›X]HÛÛ›Ü™\È0èÙ]HÙ\ÜÚ[Ûˆİ™X[[]ˆ]Xİ[ˆİØÚØYÙH\˜X›HšHŞ[˜Ú›Ûš\Ø][Ûˆ[™H][\Ø]]\œÈ¸ &Y\İÛÛ™šYİ\°êKˆHÛİ]™\\™HY™šXÚ0êYHÜHİ\ˆ\ÈØğê[˜\š[ÜÈ\ˆTÎÈHÛİ]™\\™H\ÈYÛ™\ÈHÛÙH¸ &Y\İ\ÈY\İ\°êYKˆ\È˜\ÜÈ^]ÜšYÚÛÛ\˜Ú]°ê\È[œÈ\È\Y˜XİÈÚ]XˆXİ[ÛœËÙ]‰Ë[œØY™WØ[İ×Ú[UYJB
