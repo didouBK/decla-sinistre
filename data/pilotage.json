@@ -1,0 +1,100 @@
+{
+  "sprints": [
+    {
+      "name": "Sprint 1",
+      "start_capacity": 10,
+      "done": 10,
+      "remaining_daily": [
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "Sprint 2",
+      "start_capacity": 16,
+      "done": 16,
+      "remaining_daily": [
+        16,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "Sprint 3",
+      "start_capacity": 10,
+      "done": 5,
+      "remaining_daily": [
+        10,
+        9,
+        8,
+        7,
+        6,
+        6,
+        6,
+        5,
+        5,
+        5,
+        5
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-001",
+      "name": "Fraude documentaire",
+      "probability": 3,
+      "impact": 4,
+      "owner": "QA Analyst",
+      "status": "Ouvert"
+    },
+    {
+      "id": "R-002",
+      "name": "Données personnelles dans les photos",
+      "probability": 4,
+      "impact": 5,
+      "owner": "PO",
+      "status": "Ouvert"
+    },
+    {
+      "id": "R-003",
+      "name": "Règle métier mal interprétée",
+      "probability": 3,
+      "impact": 5,
+      "owner": "BA",
+      "status": "À valider"
+    },
+    {
+      "id": "R-004",
+      "name": "Pièces trop volumineuses/illisibles",
+      "probability": 3,
+      "impact": 3,
+      "owner": "Développeur",
+      "status": "Atténué"
+    },
+    {
+      "id": "R-005",
+      "name": "Dépendance technique et retard",
+      "probability": 2,
+      "impact": 4,
+      "owner": "Scrum Master",
+      "status": "Surveillé"
+    }
+  ]
+}

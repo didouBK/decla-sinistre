@@ -1,0 +1,282 @@
+{
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Identification assuré et contrat",
+      "priority": "MUST",
+      "points": 5
+    },
+    {
+      "id": "US-002",
+      "title": "Circonstances et dommages",
+      "priority": "MUST",
+      "points": 5
+    },
+    {
+      "id": "US-003",
+      "title": "Photos et justificatifs",
+      "priority": "SHOULD",
+      "points": 5
+    },
+    {
+      "id": "US-004",
+      "title": "Contrôles métier et orientation",
+      "priority": "MUST",
+      "points": 8
+    },
+    {
+      "id": "US-005",
+      "title": "Récapitulatif avant envoi",
+      "priority": "MUST",
+      "points": 3
+    },
+    {
+      "id": "US-006",
+      "title": "Soumission de déclaration",
+      "priority": "MUST",
+      "points": 5
+    },
+    {
+      "id": "US-007",
+      "title": "Confirmation de dépôt",
+      "priority": "MUST",
+      "points": 2
+    },
+    {
+      "id": "US-008",
+      "title": "Suivi du statut",
+      "priority": "COULD",
+      "points": 3
+    }
+  ],
+  "rules": [
+    {
+      "id": "RG-001",
+      "title": "Contrat valide à la date",
+      "description": "Contrat fictif actif à la date déclarée. Hors période: blocage et vérification humaine, sans décision de garantie.",
+      "story": "US-001",
+      "tests": "TC-001;TC-002"
+    },
+    {
+      "id": "RG-002",
+      "title": "Champs obligatoires",
+      "description": "Identité, contrat, date, adresse, circonstances, description et estimation requis.",
+      "story": "US-002",
+      "tests": "TC-003"
+    },
+    {
+      "id": "RG-003",
+      "title": "Date sinistre",
+      "description": "Date non future et dans les 365 derniers jours (hypothèse de démonstration à valider).",
+      "story": "US-002",
+      "tests": "TC-004;TC-005"
+    },
+    {
+      "id": "RG-004",
+      "title": "Cohérence circonstances",
+      "description": "Situation ambiguë transmise au gestionnaire; aucun rejet automatique.",
+      "story": "US-004",
+      "tests": "TC-006"
+    },
+    {
+      "id": "RG-005",
+      "title": "Pièces jointes",
+      "description": "JPG, PNG, PDF; maximum 10 Mo par fichier, 30 Mo cumulés (hypothèses).",
+      "story": "US-003",
+      "tests": "TC-007;TC-008"
+    },
+    {
+      "id": "RG-006",
+      "title": "Estimation",
+      "description": "Valeur numérique de 0 à 100 000 €; estimation indicative, pas indemnité.",
+      "story": "US-002",
+      "tests": "TC-009;TC-010"
+    },
+    {
+      "id": "RG-007",
+      "title": "Orientation expert",
+      "description": "À partir de 5 000 €, proposer expertise; seuil fictif à valider.",
+      "story": "US-004",
+      "tests": "TC-011"
+    },
+    {
+      "id": "RG-008",
+      "title": "Données manquantes",
+      "description": "Lister les champs requis absents avant soumission.",
+      "story": "US-004",
+      "tests": "TC-003"
+    },
+    {
+      "id": "RG-009",
+      "title": "Référence",
+      "description": "Après soumission conforme, générer DS-AAAA-NNNNNN unique.",
+      "story": "US-006",
+      "tests": "TC-012"
+    },
+    {
+      "id": "RG-010",
+      "title": "Confirmation",
+      "description": "Afficher confirmation seulement après dépôt conforme.",
+      "story": "US-007",
+      "tests": "TC-012"
+    },
+    {
+      "id": "RG-011",
+      "title": "Statuts",
+      "description": "Brouillon, Déposé, À qualifier, En traitement; transitions illustratives.",
+      "story": "US-008",
+      "tests": "TC-013"
+    },
+    {
+      "id": "RG-012",
+      "title": "Contrôle avant transmission",
+      "description": "Seul un dossier complet peut passer en qualification; aucune transmission réelle.",
+      "story": "US-006",
+      "tests": "TC-003;TC-011"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Identification et contrat fictif",
+      "testable": true
+    },
+    {
+      "id": "REQ-002",
+      "title": "Circonstances, dommages et montant",
+      "testable": true
+    },
+    {
+      "id": "REQ-003",
+      "title": "Ajout et validation des pièces",
+      "testable": true
+    },
+    {
+      "id": "REQ-004",
+      "title": "Complétude, règles et orientation",
+      "testable": true
+    },
+    {
+      "id": "REQ-005",
+      "title": "Récapitulatif modifiable",
+      "testable": true
+    },
+    {
+      "id": "REQ-006",
+      "title": "Soumission et référence fictive",
+      "testable": true
+    },
+    {
+      "id": "REQ-007",
+      "title": "Confirmation de dépôt",
+      "testable": true
+    },
+    {
+      "id": "REQ-008",
+      "title": "Suivi de statut",
+      "testable": true
+    },
+    {
+      "id": "REQ-009",
+      "title": "Aucune transmission externe ni donnée réelle",
+      "testable": true
+    },
+    {
+      "id": "REQ-010",
+      "title": "Parcours nominal inférieur à cinq minutes, objectif à mesurer",
+      "testable": true
+    }
+  ],
+  "tests": [
+    {
+      "id": "TC-001",
+      "title": "Contrat valide",
+      "links": "REQ-001;RG-001",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-002",
+      "title": "Contrat hors période",
+      "links": "REQ-001;RG-001",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-003",
+      "title": "Champs manquants",
+      "links": "REQ-004;RG-002;RG-008;RG-012",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-004",
+      "title": "Date future",
+      "links": "REQ-002;RG-003",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-005",
+      "title": "Date trop ancienne",
+      "links": "REQ-002;RG-003",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-006",
+      "title": "Circonstance ambiguë",
+      "links": "REQ-002;RG-004",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-007",
+      "title": "Fichier supporté",
+      "links": "REQ-003;RG-005",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-008",
+      "title": "Fichier trop grand/invalide",
+      "links": "REQ-003;RG-005",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-009",
+      "title": "Montant négatif",
+      "links": "REQ-002;RG-006",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-010",
+      "title": "Montant supérieur limite",
+      "links": "REQ-002;RG-006",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-011",
+      "title": "Seuil expert",
+      "links": "REQ-004;RG-007;RG-012",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-012",
+      "title": "Soumission conforme",
+      "links": "REQ-005;REQ-006;REQ-007;RG-009;RG-010",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-013",
+      "title": "Suivi statut",
+      "links": "REQ-008;RG-011",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-014",
+      "title": "Absence appel externe",
+      "links": "REQ-009",
+      "status": "À exécuter"
+    },
+    {
+      "id": "TC-015",
+      "title": "Mesure durée",
+      "links": "REQ-010",
+      "status": "À exécuter"
+    }
+  ]
+}

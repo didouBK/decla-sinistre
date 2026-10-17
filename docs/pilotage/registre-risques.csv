@@ -1,0 +1,6 @@
+id,description,cause,probabilite_1_5,impact_1_5,criticite_PxI,responsable,prevention,contingence,statut
+R-001,Fraude documentaire,Pièce falsifiée ou altérée,3,4,12,QA Analyst,Conserver contrôle humain; ne pas automatiser l’authenticité,Revue gestionnaire et demande de pièce complémentaire,Ouvert
+R-002,Données personnelles dans les photos,Métadonnées et éléments identifiants,4,5,20,Product Owner,Avertir; employer uniquement médias fictifs; minimiser les données,Supprimer les fichiers locaux et escalader au référent sécurité,Ouvert
+R-003,Mauvaise interprétation des règles,Hypothèses non validées par référent métier,3,5,15,Business Analyst,"Faire valider règles, exceptions et messages",Suspendre décision automatique; revue humaine,À valider
+R-004,Pièces volumineuses ou illisibles,"Limites appareil, format ou qualité",3,3,9,Développeur,Contrôler format/taille et afficher les contraintes,Demander nouveau fichier ou traitement humain,Atténué
+R-005,Retard/dépendance technique,Dépendance bibliothèque ou environnement,2,4,8,Scrum Master,Prototype léger et revue régulière des dépendances,Réduire périmètre et reporter fonctionnalités secondaires,Surveillé

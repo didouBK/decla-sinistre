@@ -1,0 +1,9 @@
+activite,Sponsor,PO,BA,Developpeur,QA Analyst,Scrum Master,Referent metier
+Validation besoins,I,A,R,I,C,I,C
+Règles métier,I,C,R,I,C,I,A
+UX,I,A,R,C,C,I,C
+Développement,I,A,C,R,C,I,I
+Tests,I,C,C,C,A/R,I,C
+Recette,I,A,R,C,R,I,C
+Risques,I,A,R,C,C,R,C
+Décision fictive,A,R,C,C,C,I,C
