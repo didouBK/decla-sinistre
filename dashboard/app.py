@@ -28,7 +28,7 @@ for s in pilot['sprints']:
 st.plotly_chart(px.line(pd.DataFrame(rows),x='Jour',y='SP restants',color='Sprint',markers=True),use_container_width=True)
 st.caption('Source unique: data/pilotage.json; SP restants illustratifs par jour, y compris un reliquat simulé.')
 st.subheader('Risques')
-risk['Criticité P×I']=risk['probabilite']*risk['impact']
+risk['Criticité P×I']=risk['probabilite_1_5']*risk['impact_1_5']
 st.dataframe(risk,use_container_width=True,hide_index=True)
 st.subheader('Couverture des exigences')
 testable=[r for r in ref['requirements'] if r['testable']]
