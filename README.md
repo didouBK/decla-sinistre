@@ -39,7 +39,7 @@ Python 3.11+ recommandé.
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 Prototype: `cd prototype && python3 -m http.server 8000`, puis ouvrir http://localhost:8000. Ou ouvrir `prototype/index.html`. Le prototype n’envoie aucune donnée; éviter toute donnée personnelle.
@@ -47,10 +47,10 @@ Prototype: `cd prototype && python3 -m http.server 8000`, puis ouvrir http://loc
 Dashboard depuis la racine: `streamlit run dashboard/app.py`.
 
 ## Tests
-`python scripts/validate_project.py` puis `python -m pytest -q`. Les fichiers `.feature` sont des spécifications; l’automatisation pytest vérifie les référentiels, liens et exports, pas l’exécution navigateur. Les scénarios UI doivent être joués manuellement et consignés. Les nombres de tests passés ne sont pas inventés.
+`python3 scripts/validate_project.py` puis `python3 -m pytest -q`. Les fichiers `.feature` sont des spécifications; l’automatisation pytest vérifie les référentiels, liens et exports, pas l’exécution navigateur. Les scénarios UI doivent être joués manuellement et consignés. Les nombres de tests passés ne sont pas inventés.
 
 ## Limites et améliorations
 Aucun backend, compte réel, sécurité de production, contrôle antivirus, stockage documentaire, audit de conformité ou validation métier indépendante. Les statuts et données de pilotage sont simulés. Suite possible: tests navigateur automatisés, validation des règles par un référent métier, étude de sécurité/confidentialité, puis architecture authentifiée et journalisée avant tout usage réel.
 
 ## Publication
-Aucun dépôt distant n’est créé et aucun code n’est publié par ce travail. Après revue: créer un dépôt GitHub sous le compte choisi, puis depuis la racine `git init`, `git add .`, `git commit -m "Initialiser le portfolio DéclaSinistre"`, `git branch -M main`, `git remote add origin <URL_DU_DEPOT>`, `git push -u origin main`. Vérifier les secrets et les données avant publication. Pour Streamlit Community Cloud, connecter le dépôt, choisir `dashboard/app.py` et installer `requirements.txt`; déploiement non effectué ici. Ajouter une licence MIT si cette modalité est souhaitée.
+Dépôt GitHub : https://github.com/didouBK/decla-sinistre. Les sources sont des fichiers fictifs préparés pour un portfolio; aucun déploiement Streamlit n’a été effectué. Avant tout déploiement, configurer l’application sur Streamlit Community Cloud avec `dashboard/app.py` et `requirements.txt`, puis vérifier les réglages de confidentialité.
