@@ -52,5 +52,8 @@ Dashboard depuis la racine: `streamlit run dashboard/app.py`.
 ## Limites et améliorations
 Aucun backend, compte réel, sécurité de production, contrôle antivirus, stockage documentaire, audit de conformité ou validation métier indépendante. Les statuts et données de pilotage sont simulés. Suite possible: tests navigateur automatisés, validation des règles par un référent métier, étude de sécurité/confidentialité, puis architecture authentifiée et journalisée avant tout usage réel.
 
-## Publication
-Dépôt GitHub : https://github.com/didouBK/decla-sinistre. Les sources sont des fichiers fictifs préparés pour un portfolio; aucun déploiement Streamlit n’a été effectué. Avant tout déploiement, configurer l’application sur Streamlit Community Cloud avec `dashboard/app.py` et `requirements.txt`, puis vérifier les réglages de confidentialité.
+## Déploiement
+
+Le prototype peut être publié sur GitHub Pages via le workflow `.github/workflows/deploy-pages.yml`. Pour l’activer, ouvrir **Settings → Pages** sur le dépôt et choisir **GitHub Actions** comme source. Le workflow publie le contenu de `prototype/` à chaque changement sur `main`. URL attendue : https://didoubk.github.io/decla-sinistre/ (disponible après activation et premier déploiement réussi).
+
+Le dashboard est prêt pour Streamlit Community Cloud : connecter le dépôt `didouBK/decla-sinistre`, sélectionner la branche `main` et le fichier `dashboard/app.py`. Le déploiement Community Cloud requiert une session et une action dans le compte Streamlit; il n’est pas encore activé. Aucun backend ni service externe ne reçoit les données du prototype.
