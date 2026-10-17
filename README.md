@@ -54,7 +54,9 @@ Aucun backend, compte réel, sécurité de production, contrôle antivirus, stoc
 
 ## Déploiement
 
-- **Prototype GitHub Pages :** [ouvrir la démonstration](https://didoubk.github.io/decla-sinistre/). Le workflow `.github/workflows/deploy-pages.yml` publie `prototype/` sur les changements de `main`.
+- **Prototype GitHub Pages :** [ouvrir la démonstration](https://didoubk.github.io/decla-sinistre/). Le workflow `.github/workflows/deploy-pages.yml` publie `prototype/` à chaque changement sur `main`.
 - **Dashboard Streamlit :** [ouvrir le tableau de pilotage](https://decla-sinistre-x9mfsvb3qxpanxxc4gmnhu.streamlit.app/). Il est connecté au dépôt `didouBK/decla-sinistre`, branche `main`, fichier `dashboard/app.py`.
+
+Le dashboard propose aussi un onglet **QA · Tests et couverture** : lancement de `scripts/validate_project.py` et de pytest, suivi des 15 cas manuels liés aux US, couverture d’exécution par US et export CSV du plan et du journal. Les résultats sont conservés pendant la session Streamlit; ils ne sont pas partagés entre utilisateurs ni stockés durablement. Les tests navigateur doivent être exécutés manuellement sur le prototype.
 
 Aucun backend ni service externe ne reçoit les données du prototype. Les données du dashboard sont fictives et les indicateurs sont des simulations.
