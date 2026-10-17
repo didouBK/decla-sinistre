@@ -113,10 +113,10 @@ test('[US-005][TC-012] relire puis confirmer une déclaration fictive', async ({
   await page.getByLabel('Décrivez les circonstances').fill('La description a été corrigée dans la démonstration.');
   await page.getByRole('button', { name: 'Continuer →' }).click();
   await page.getByRole('button', { name: 'Continuer →' }).click();
+  await expect(page.locator('.summary-grid')).toContainText('La description a été corrigée dans la démonstration.');
   await page.getByRole('button', { name: 'Confirmer la simulation' }).click();
   await expect(page.getByRole('heading', { name: 'Votre déclaration est prête' })).toBeVisible();
   await expect(page.locator('.summary-grid')).toContainText(/DS-DEMO-\d{6}/);
-  await expect(page.locator('.summary-grid')).toContainText('La description a été corrigée dans la démonstration.');
 });
 
 test('[US-006][US-007][TC-012] enregistrer une référence et afficher la confirmation', async ({ page }) => {
