@@ -54,6 +54,7 @@ Aucun backend, compte réel, sécurité de production, contrôle antivirus, stoc
 
 ## Déploiement
 
-Le prototype peut être publié sur GitHub Pages via le workflow `.github/workflows/deploy-pages.yml`. Pour l’activer, ouvrir **Settings → Pages** sur le dépôt et choisir **GitHub Actions** comme source. Le workflow publie le contenu de `prototype/` à chaque changement sur `main`. URL attendue : https://didoubk.github.io/decla-sinistre/ (disponible après activation et premier déploiement réussi).
+- **Prototype GitHub Pages :** [ouvrir la démonstration](https://didoubk.github.io/decla-sinistre/). Le workflow `.github/workflows/deploy-pages.yml` publie `prototype/` sur les changements de `main`.
+- **Dashboard Streamlit :** [ouvrir le tableau de pilotage](https://decla-sinistre-x9mfsvb3qxpanxxc4gmnhu.streamlit.app/). Il est connecté au dépôt `didouBK/decla-sinistre`, branche `main`, fichier `dashboard/app.py`.
 
-Le dashboard est prêt pour Streamlit Community Cloud : connecter le dépôt `didouBK/decla-sinistre`, sélectionner la branche `main` et le fichier `dashboard/app.py`. Le déploiement Community Cloud requiert une session et une action dans le compte Streamlit; il n’est pas encore activé. Aucun backend ni service externe ne reçoit les données du prototype.
+Aucun backend ni service externe ne reçoit les données du prototype. Les données du dashboard sont fictives et les indicateurs sont des simulations.
