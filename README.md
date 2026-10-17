@@ -1,0 +1,56 @@
+# DéclaSinistre
+
+**Digitalisation fictive du parcours de déclaration d’un dégât des eaux — assurance IARD**
+
+> Cas pratique portfolio intégralement fictif. Les chiffres, acteurs, règles, données et résultats de pilotage sont des hypothèses ou simulations. Aucun assureur réel ni donnée client réelle ne sont impliqués. Ce projet n’est pas utilisé en production.
+
+## Sommaire
+- [Contexte et objectifs](#contexte-et-objectifs)
+- [Périmètre](#périmètre)
+- [Architecture](#architecture)
+- [Compétences démontrées](#compétences-démontrées)
+- [Livrables](#livrables)
+- [Installation et exécution](#installation-et-exécution)
+- [Tests](#tests)
+- [Limites et améliorations](#limites-et-améliorations)
+- [Publication](#publication)
+
+## Contexte et objectifs
+Le scénario part d’une hypothèse de déclarations principalement téléphoniques, 30 % de dossiers incomplets et 5 jours de délai initial moyen. Ce ne sont pas des statistiques réelles. Cibles à étudier: déclaration nominale en moins de 5 minutes, taux incomplet ≤10 %, prise en charge initiale ≤1 jour ouvré, meilleure visibilité et contrôles en amont. Elles ne sont pas présentées comme des résultats obtenus.
+
+## Périmètre
+Parcours fictif d’identification, circonstances, justificatifs locaux, contrôles, récapitulatif, dépôt, confirmation et suivi simplifié. Exclusions: contrat/assureur réel, indemnisation, paiement, expertise réelle, signature opposable, authentification et stockage de vrais documents. Seuil expert, fenêtre de date et limites fichiers sont des hypothèses à valider, pas des règles universelles.
+
+## Architecture
+Le prototype statique est dans `prototype/`; le dashboard Streamlit dans `dashboard/`. Les référentiels canoniques sont `data/referentiel.json` et `data/pilotage.json`; CSV versionnés servent aux exports. Contrôles automatiques: `scripts/validate_project.py` et pytest. CI GitHub Actions vérifie le dépôt.
+
+## Compétences démontrées
+- **BA :** expression de besoin, périmètre, règles, processus AS-IS/TO-BE, exigences et traçabilité.
+- **QA :** stratégie, plan, cas, critères Gherkin, données fictives, contrôles automatisés et limites.
+- **Pilotage :** MoSCoW, roadmap, sprints simulés, risques, RACI, COPIL, vélocité/burndown.
+- **UX/technique :** prototype accessible de base, responsive, Streamlit/Pandas/Plotly.
+
+## Livrables
+Commencer par [l’index documentaire](docs/index.md), puis [expression de besoin](docs/ba/expression-besoin.md), [stories](docs/ba/user-stories.md), [règles](docs/ba/regles-gestion.md), [matrice QA](docs/qa/matrice-tracabilite.md), [roadmap](docs/pilotage/roadmap.md), [registre des risques](docs/pilotage/registre-risques.md) et [architecture](docs/architecture/architecture.md).
+
+## Installation et exécution
+Python 3.11+ recommandé.
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
+
+Prototype: `cd prototype && python3 -m http.server 8000`, puis ouvrir http://localhost:8000. Ou ouvrir `prototype/index.html`. Le prototype n’envoie aucune donnée; éviter toute donnée personnelle.
+
+Dashboard depuis la racine: `streamlit run dashboard/app.py`.
+
+## Tests
+`python scripts/validate_project.py` puis `python -m pytest -q`. Les fichiers `.feature` sont des spécifications; l’automatisation pytest vérifie les référentiels, liens et exports, pas l’exécution navigateur. Les scénarios UI doivent être joués manuellement et consignés. Les nombres de tests passés ne sont pas inventés.
+
+## Limites et améliorations
+Aucun backend, compte réel, sécurité de production, contrôle antivirus, stockage documentaire, audit de conformité ou validation métier indépendante. Les statuts et données de pilotage sont simulés. Suite possible: tests navigateur automatisés, validation des règles par un référent métier, étude de sécurité/confidentialité, puis architecture authentifiée et journalisée avant tout usage réel.
+
+## Publication
+Aucun dépôt distant n’est créé et aucun code n’est publié par ce travail. Après revue: créer un dépôt GitHub sous le compte choisi, puis depuis la racine `git init`, `git add .`, `git commit -m "Initialiser le portfolio DéclaSinistre"`, `git branch -M main`, `git remote add origin <URL_DU_DEPOT>`, `git push -u origin main`. Vérifier les secrets et les données avant publication. Pour Streamlit Community Cloud, connecter le dépôt, choisir `dashboard/app.py` et installer `requirements.txt`; déploiement non effectué ici. Ajouter une licence MIT si cette modalité est souhaitée.
