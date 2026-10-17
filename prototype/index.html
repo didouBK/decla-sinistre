@@ -1,1 +1,53 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DéclaSinistre — démonstration fictive</title><link rel="stylesheet" href="style.css"></head><body><header><span class="tag">CAS FICTIF · DONNÉES DE DÉMONSTRATION</span><h1>Déclarer un dégât des eaux</h1><p>Parcours indicatif — aucune donnée ne quitte ce navigateur.</p></header><main><nav aria-label="Progression"><ol id="steps"></ol></nav><section id="screen" aria-live="polite"></section><div class="nav"><button id="prev">← Retour</button><button id="next">Continuer →</button></div></main><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102c3b">
+  <meta name="description" content="Démonstration fictive du parcours de déclaration d’un dégât des eaux.">
+  <title>DéclaSinistre — Déclarer un dégât des eaux</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="DéclaSinistre, accueil">
+      <span class="brand-mark" aria-hidden="true">D</span>
+      <span class="brand-name">décla<span>sinistre</span></span>
+    </a>
+    <div class="topbar-meta"><span class="demo-dot"></span> Démonstration fictive</div>
+  </header>
+
+  <main id="top" class="page-shell">
+    <section class="page-intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">DÉCLARATION EN LIGNE <span>·</span> ENVIRON 5 MIN</p>
+        <h1 id="page-title">Déclarer un dégât<br class="desktop-break"> des eaux</h1>
+        <p class="intro-copy">Nous vous guidons à chaque étape. Préparez les informations sur le sinistre et, si vous en avez, vos justificatifs.</p>
+      </div>
+      <div class="intro-aside"><span class="aside-icon" aria-hidden="true">↗</span><span>Votre déclaration<br><strong>en 5 étapes</strong></span></div>
+    </section>
+
+    <nav class="progress-card" aria-label="Étapes de la déclaration">
+      <ol id="steps"></ol>
+    </nav>
+
+    <div class="flow-layout">
+      <section id="screen" class="form-card" aria-live="polite" aria-atomic="true"></section>
+      <aside class="help-panel" aria-label="Informations utiles">
+        <div class="help-symbol" aria-hidden="true">i</div>
+        <h2>À savoir</h2>
+        <p>Cette démonstration utilise uniquement des données fictives. Aucune information ni pièce jointe ne quitte votre navigateur.</p>
+        <div class="help-divider"></div>
+        <p class="help-small"><strong>Besoin d’aide ?</strong><br>Vous pouvez revenir aux étapes précédentes avant de confirmer.</p>
+        <div class="privacy-line"><span aria-hidden="true">◇</span> Parcours de démonstration sécurisé localement</div>
+      </aside>
+    </div>
+
+    <footer class="site-footer"><span>DéclaSinistre <span class="footer-sep">/</span> Cas pratique fictif</span><span>Les règles et chiffres présentés sont des hypothèses de démonstration.</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
